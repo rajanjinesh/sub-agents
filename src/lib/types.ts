@@ -18,3 +18,14 @@ export type Stay = {
   url: string;
   feesMayBeExtra: boolean; // Airbnb only, else false
 };
+
+export type TraceEvent = {
+  t: number; // ms since the run started
+  agent: string; // "booking" | "airbnb" | "orchestrator"
+  type: "agent_started" | "tool_called" | "tool_returned" | "agent_finished" | "warning" | "error";
+  message: string;
+};
+
+export type SourceResult =
+  | { source: "booking" | "airbnb"; status: "ok"; stays: Stay[]; ms: number }
+  | { source: "booking" | "airbnb"; status: "failed"; error: string; ms: number };
