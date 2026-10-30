@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { USD_TO_INR } from "../config";
 import { applyRules } from "../rules";
 import type { Stay } from "../types";
-import { normalizeAirbnb } from "./airbnb";
+import { airbnbParams, normalizeAirbnb } from "./airbnb";
 import { normalizeBooking } from "./booking";
 
 const fixture = (name: string) => JSON.parse(readFileSync(path.join(process.cwd(), "fixtures", name), "utf8"));
@@ -113,5 +113,19 @@ describe("normalizeAirbnb (fixture)", () => {
       ],
     };
     expect(normalizeAirbnb(raw)).toEqual([]);
+  });
+});
+
+describe("airbnbParams", () => {
+  const base = { destination: "Madurai", checkIn: "2026-11-13", checkOut: "2026-11-14", adults: 1 };
+
+  it("omits children when there are none (HasData returns 422 for children=0)", () => {
+    const p = airbnbParams({ ...base, children: 0, childAges: [] });
+    expect("children" in p).toBe(false);
+    expect(p).toEqual({ location: "Madurai", checkIn: "2026-11-13", checkOut: "2026-11-14", adults: "1" });
+  });
+
+  it("sends the children count when there are children", () => {
+    expect(airbnbParams({ ...base, adults: 2, children: 2, childAges: [1, 5] }).children).toBe("2");
   });
 });

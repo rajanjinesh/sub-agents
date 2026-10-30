@@ -8,14 +8,22 @@ import { hasdataGet } from "./http";
  * The endpoint documents no currency param (prices are USD) and no child-age param (count only).
  */
 export function fetchAirbnbRaw(input: SearchInput): Promise<unknown> {
+  return hasdataGet("/scrape/airbnb/listing", airbnbParams(input));
+}
+
+/**
+ * HasData rejects `children=0` on this endpoint (HTTP 422: "children" must be at least 1),
+ * so the param is only sent when there are children.
+ */
+export function airbnbParams(input: SearchInput): Record<string, string> {
   const params: Record<string, string> = {
     location: input.destination,
     checkIn: input.checkIn,
     checkOut: input.checkOut,
     adults: String(input.adults),
-    children: String(input.children),
   };
-  return hasdataGet("/scrape/airbnb/listing", params);
+  if (input.children > 0) params.children = String(input.children);
+  return params;
 }
 
 type AirbnbProperty = {
