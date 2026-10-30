@@ -74,7 +74,7 @@ export async function runSubagent(cfg: SubagentConfig, input: SearchInput): Prom
           continue;
         }
         const p = use.input as Partial<SearchInput>;
-        const params: SearchInput = {
+        const asked: SearchInput = {
           destination: String(p.destination ?? ""),
           checkIn: String(p.checkIn ?? ""),
           checkOut: String(p.checkOut ?? ""),
@@ -82,10 +82,19 @@ export async function runSubagent(cfg: SubagentConfig, input: SearchInput): Prom
           children: Number(p.children),
           childAges: Array.isArray(p.childAges) ? p.childAges.map(Number) : [],
         };
+        // The user's SearchInput is the source of truth: the model's params are only checked against it.
+        const differs = (Object.keys(input) as (keyof SearchInput)[]).filter(
+          (k) => JSON.stringify(asked[k]) !== JSON.stringify(input[k]),
+        );
+        const params: SearchInput = { ...input, childAges: [...input.childAges] };
         log(
           "tool_called",
           `→ called ${cfg.toolName} (${params.destination}, ${params.checkIn} → ${params.checkOut}, ${plural(params.adults, "adult")}, ${plural(params.children, "child").replace("childs", "children")})`,
         );
+        if (differs.length > 0) {
+          const detail = differs.map((k) => `${k}: ${JSON.stringify(asked[k])} → ${JSON.stringify(input[k])}`).join("; ");
+          log("warning", `params corrected (${detail})`);
+        }
         const invalid = Object.values(validateSearchInput(params));
         if (invalid.length > 0) {
           log("warning", `tool params rejected: ${invalid.join("; ")}`);

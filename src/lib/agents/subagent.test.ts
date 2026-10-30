@@ -56,6 +56,29 @@ describe("runSubagent", () => {
     expect(create.mock.calls[0][0].tools).toHaveLength(1);
   });
 
+  it("corrects the model's params to the user's SearchInput and warns in the trace", async () => {
+    const wrong = { ...input, destination: "Paris", adults: 3, childAges: [9] };
+    create
+      .mockResolvedValueOnce({ content: [{ ...toolUse, input: wrong }] })
+      .mockResolvedValueOnce({ content: [{ type: "text", text: "ok" }] });
+    const execute = vi.fn(async () => [stay]);
+    const run = await runSubagent(cfg(execute), input);
+    expect(execute).toHaveBeenCalledWith(input);
+    expect(run.status).toBe("ok");
+    const warning = run.trace.find((e) => e.type === "warning");
+    expect(warning?.message).toContain("params corrected");
+    expect(warning?.message).toMatch(/destination.*Paris.*Goa/);
+    expect(run.trace.find((e) => e.type === "tool_called")?.message).toContain("Goa");
+  });
+
+  it("adds no warning when the model's params match", async () => {
+    create
+      .mockResolvedValueOnce({ content: [toolUse] })
+      .mockResolvedValueOnce({ content: [{ type: "text", text: "ok" }] });
+    const run = await runSubagent(cfg(async () => [stay]), input);
+    expect(run.trace.some((e) => e.type === "warning")).toBe(false);
+  });
+
   it("fails (does not throw) when the model never calls the tool", async () => {
     create.mockResolvedValue({ content: [{ type: "text", text: "no" }] });
     const run = await runSubagent(cfg(async () => [stay]), input);
