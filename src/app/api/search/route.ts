@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getAnthropic, getModel } from "@/lib/anthropic";
 import { runOrchestrator } from "@/lib/agents/orchestrator";
 import type { SearchInput, SearchResult, SseEvent } from "@/lib/types";
-import { validateSearchInput } from "@/lib/validate";
+import { serverEarliestCheckIn, validateSearchInput } from "@/lib/validate";
 
 // Node runtime is the default here (`export const runtime` is not allowed with cacheComponents).
 export const maxDuration = 60;
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   }
 
   const input = parseBody(body);
-  const errors = validateSearchInput(input);
+  const errors = validateSearchInput(input, serverEarliestCheckIn());
   if (Object.keys(errors).length > 0) return NextResponse.json({ errors }, { status: 400 });
 
   // Fail fast, before streaming, if the Anthropic key or model is missing.

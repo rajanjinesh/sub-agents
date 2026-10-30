@@ -16,6 +16,7 @@ vi.mock("../anthropic", () => ({
   getModel: () => "test-model",
 }));
 
+import { serverEarliestCheckIn } from "../validate";
 import { runSubagent, type SubagentConfig } from "./subagent";
 
 const input: SearchInput = { destination: "Goa", checkIn: "2099-01-01", checkOut: "2099-01-02", adults: 2, children: 1, childAges: [5] };
@@ -77,6 +78,18 @@ describe("runSubagent", () => {
       .mockResolvedValueOnce({ content: [{ type: "text", text: "ok" }] });
     const run = await runSubagent(cfg(async () => [stay]), input);
     expect(run.trace.some((e) => e.type === "warning")).toBe(false);
+  });
+
+  it("accepts a check-in one day before the server's UTC date (visitors west of UTC)", async () => {
+    const edge = { ...input, checkIn: serverEarliestCheckIn(), checkOut: "2099-01-02" };
+    create
+      .mockResolvedValueOnce({ content: [{ ...toolUse, input: edge }] })
+      .mockResolvedValueOnce({ content: [{ type: "text", text: "ok" }] });
+    const execute = vi.fn(async () => [stay]);
+    const run = await runSubagent(cfg(execute), edge);
+    expect(execute).toHaveBeenCalledTimes(1);
+    expect(run.status).toBe("ok");
+    expect(run.trace.some((e) => e.message.includes("rejected"))).toBe(false);
   });
 
   it("fails (does not throw) when the model never calls the tool", async () => {

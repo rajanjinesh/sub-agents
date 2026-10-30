@@ -1,5 +1,5 @@
 import type { SearchResult, SseEvent } from "./types";
-import type { Source } from "./sources";
+import { SOURCE_LABEL, type Source } from "./sources";
 
 export type SourceStatus = "searching" | "done" | "failed";
 
@@ -45,4 +45,12 @@ export function describeResult(result: SearchResult): { kind: ResultKind; failed
   if (failed.length >= 2) return { kind: "error", failed: null };
   if (failed.length === 1) return { kind: "partial", failed: failed[0] };
   return { kind: result.stays.length === 0 ? "empty" : "ok", failed: null };
+}
+
+/** "{n} stays compared from Booking.com and Airbnb": names only the sources that succeeded. */
+export function compareSubLine(result: SearchResult): string | undefined {
+  const n = result.stays.length;
+  if (n === 0) return undefined;
+  const names = result.sources.filter((s) => s.status === "ok").map((s) => SOURCE_LABEL[s.source]);
+  return `${n} ${n === 1 ? "stay" : "stays"} compared from ${names.join(" and ")}`;
 }

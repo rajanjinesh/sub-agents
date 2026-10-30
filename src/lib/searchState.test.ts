@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { parseSearchParams, toSearchParams } from "./searchParams";
-import { describeResult, initialSearchState, searchReducer } from "./searchState";
+import { compareSubLine, describeResult, initialSearchState, searchReducer } from "./searchState";
 import { parseSseBuffer } from "./sse";
 import type { SearchInput, SearchResult, SourceResult, Stay } from "./types";
 
@@ -56,6 +56,23 @@ describe("describeResult", () => {
   });
   it("error: both failed", () =>
     expect(describeResult(res([], [badSrc("booking"), badSrc("airbnb")]))).toEqual({ kind: "error", failed: null }));
+});
+
+describe("compareSubLine", () => {
+  const both = [okSrc("booking"), okSrc("airbnb")];
+  it("names both sources when both succeeded", () => {
+    expect(compareSubLine(res(Array(6).fill(stay), both))).toBe("6 stays compared from Booking.com and Airbnb");
+  });
+  it("names only Booking.com when Airbnb failed", () => {
+    expect(compareSubLine(res(Array(3).fill(stay), [okSrc("booking"), badSrc("airbnb")]))).toBe("3 stays compared from Booking.com");
+  });
+  it("names only Airbnb when Booking.com failed", () => {
+    expect(compareSubLine(res(Array(3).fill(stay), [badSrc("booking"), okSrc("airbnb")]))).toBe("3 stays compared from Airbnb");
+  });
+  it("uses the real count, singular for one, and nothing for none", () => {
+    expect(compareSubLine(res([stay], both))).toBe("1 stay compared from Booking.com and Airbnb");
+    expect(compareSubLine(res([], both))).toBeUndefined();
+  });
 });
 
 describe("search params", () => {

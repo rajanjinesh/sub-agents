@@ -1,5 +1,5 @@
 import { SOURCES, SOURCE_LABEL } from "@/lib/sources";
-import { describeResult } from "@/lib/searchState";
+import { compareSubLine, describeResult } from "@/lib/searchState";
 import type { SearchInput, SearchResult } from "@/lib/types";
 import { AgentActivity } from "./AgentActivity";
 import { ResultsHeader } from "./ResultsHeader";
@@ -19,10 +19,7 @@ export function ResultsView({ input, result, debug }: { input: SearchInput; resu
   const other = failed ? SOURCES.find((s) => s !== failed) : null;
   return (
     <div className="flex flex-col gap-4">
-      <ResultsHeader
-        input={input}
-        subLine={n > 0 ? `${n} ${n === 1 ? "stay" : "stays"} compared from Booking.com and Airbnb` : undefined}
-      />
+      <ResultsHeader input={input} subLine={compareSubLine(result)} />
       {failed && other && (
         <p className="text-xs leading-4 text-muted">
           {SOURCE_LABEL[failed]} results are unavailable right now. Showing {SOURCE_LABEL[other]} only.

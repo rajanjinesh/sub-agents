@@ -36,3 +36,13 @@ export function validateSearchInput(input: SearchInput, today = todayISO()): Sea
 
   return errors;
 }
+
+/**
+ * Earliest check-in the SERVER accepts: one day before the server's UTC date. The server's clock
+ * (UTC on Vercel) can be a day ahead of a visitor west of UTC, so their "today" must not be rejected.
+ * The client keeps the strict "not before my today" rule.
+ */
+export function serverEarliestCheckIn(now = new Date()): string {
+  const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 1));
+  return d.toISOString().slice(0, 10);
+}

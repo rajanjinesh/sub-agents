@@ -1,7 +1,7 @@
 import type Anthropic from "@anthropic-ai/sdk";
 import { getAnthropic, getModel } from "../anthropic";
 import type { SearchInput, SourceResult, Stay, TraceEvent } from "../types";
-import { validateSearchInput } from "../validate";
+import { serverEarliestCheckIn, validateSearchInput } from "../validate";
 
 const MAX_TURNS = 3;
 
@@ -101,7 +101,7 @@ export async function runSubagent(cfg: SubagentConfig, input: SearchInput): Prom
           const detail = differs.map((k) => `${k}: ${JSON.stringify(asked[k])} → ${JSON.stringify(input[k])}`).join("; ");
           log("warning", `params corrected (${detail})`);
         }
-        const invalid = Object.values(validateSearchInput(params));
+        const invalid = Object.values(validateSearchInput(params, serverEarliestCheckIn()));
         if (invalid.length > 0) {
           log("warning", `tool params rejected: ${invalid.join("; ")}`);
           results.push({ type: "tool_result", tool_use_id: use.id, is_error: true, content: `Invalid search params: ${invalid.join("; ")}` });
