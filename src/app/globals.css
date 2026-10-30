@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* Design tokens (docs/design-spec-v3.md). Reused by later steps. */
+:root {
+  --sa-strong: #111827;
+  --sa-label: #374151;
+  --sa-muted: #6b7280;
+  --sa-placeholder: #9ca3af;
+  --sa-border: #d1d5db;
+  --sa-error: #ef4444;
+  --sa-primary: #2563eb;
+  --sa-white: #ffffff;
+  --sa-tint-blue: #eff6ff;
+  --sa-tint-grey: #f3f4f6;
+
+  --sa-radius: 8px;
+  --sa-radius-pill: 999px;
+  --sa-column: 550px;
+  --sa-page-top: 21px;
+}
+
+@theme inline {
+  --color-strong: var(--sa-strong);
+  --color-label: var(--sa-label);
+  --color-muted: var(--sa-muted);
+  --color-placeholder: var(--sa-placeholder);
+  --color-border: var(--sa-border);
+  --color-error: var(--sa-error);
+  --color-primary: var(--sa-primary);
+  --color-tint-blue: var(--sa-tint-blue);
+  --color-tint-grey: var(--sa-tint-grey);
+  --radius-ui: var(--sa-radius);
+  --radius-pill: var(--sa-radius-pill);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+body {
+  background: var(--sa-white);
+  color: var(--sa-strong);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* 550px centred column, 21px top padding, 16px side padding under 600px */
+.page-column {
+  width: 100%;
+  max-width: var(--sa-column);
+  margin: 0 auto;
+  padding: var(--sa-page-top) 0 40px;
+}
+@media (max-width: 599px) {
+  .page-column {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Pill: 22px high, 0 8px padding, 999px radius, Medium 12/16 */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--sa-radius-pill);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
