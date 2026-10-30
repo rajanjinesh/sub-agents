@@ -1,0 +1,1156 @@
+{
+  "requestMetadata": {
+    "id": "fc0d8d6c-569e-45ad-8676-dcf9436c674b",
+    "status": "ok",
+    "html": "https://files.hasdata.com/L4V6FrLt6mfhQ7Q0D8h3IldLzym2/fc0d8d6c-569e-45ad-8676-dcf9436c674b.html",
+    "json": "https://files.hasdata.com/L4V6FrLt6mfhQ7Q0D8h3IldLzym2/fc0d8d6c-569e-45ad-8676-dcf9436c674b.json",
+    "preview": "https://files.hasdata.com/L4V6FrLt6mfhQ7Q0D8h3IldLzym2/fc0d8d6c-569e-45ad-8676-dcf9436c674b.preview",
+    "url": "https://www.booking.com/dml/graphql?ss=Goa&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5"
+  },
+  "searchInformation": {
+    "keyword": "Goa",
+    "rooms": 1,
+    "adults": 2,
+    "children": 1,
+    "childrenAges": "5",
+    "currency": "inr",
+    "checkInDate": "2026-11-13",
+    "checkOutDate": "2026-11-14"
+  },
+  "results": [
+    {
+      "hotelId": 16480799,
+      "title": "The Earth-Maison Ocean Beach Resort",
+      "url": "https://www.booking.com/hotel/in/the-earth-maison-ocean-beach-resort.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Palm Veranda",
+      "roomId": "1648079901",
+      "beds": 1,
+      "bedTypes": [
+        "1 king bed"
+      ],
+      "location": {
+        "locationTitle": "Mandrem",
+        "address": "Survey No. 216, Ashvem Beach, Mandrem, North Goa, Goa,",
+        "city": "Goa",
+        "latitude": 15.6489826663839,
+        "longitude": 73.7160383909538,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-05T18:30:00Z",
+        "noPrepayment": true,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 12,600",
+        "pricePerStayParsed": 12600,
+        "excludedChargesRaw": "Rs. 2,268",
+        "excludedChargesParsed": 2268,
+        "currency": "INR"
+      },
+      "rating": 5,
+      "reviews": {
+        "score": 8.7,
+        "count": 12,
+        "text": "Excellent",
+        "secondaryScore": 9.6,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/899009304.jpg?k=ea776a6b36ddbc9168e53858b51460eba91b4ab2e45c89139f4d13573f819781&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/899009304.webp?k=e525a9d31268fa958fe1d62a3ae8c045300a1ba0e6df571aa9bc675e1a865c88&o="
+      }
+    },
+    {
+      "hotelId": 271961,
+      "title": "Novotel Goa Dona Sylvia Resort",
+      "url": "https://www.booking.com/hotel/in/dona-sylvia-beach-resort.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Executive King Room - 4 pints of beer bucket per stay, 10% Discount on Food & Beverages, Laundry and SPA",
+      "roomId": "27196124",
+      "beds": 1,
+      "bedTypes": [
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Cavelossim",
+        "address": "Cavelossim Beach",
+        "city": "Cavelossim",
+        "latitude": 15.1746733044482,
+        "longitude": 73.9450451731682,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-09T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 10,710",
+        "pricePerStayParsed": 10710,
+        "excludedChargesRaw": "Rs. 1,927.80",
+        "excludedChargesParsed": 1927.8,
+        "currency": "INR"
+      },
+      "rating": 5,
+      "reviews": {
+        "score": 8.4,
+        "count": 300,
+        "text": "Very Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/131728896.jpg?k=3cb97112f2d313636410de41ac1e5c9765a57e948139d22906621b6416bdf89a&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/131728896.webp?k=7b2f610fa83a534e020523763dc3a048159992d2c6a48758f67fb6b8e42ae26b&o="
+      }
+    },
+    {
+      "hotelId": 15639053,
+      "title": "Forsté Arcangela, Sangolda",
+      "url": "https://www.booking.com/hotel/in/forste-arcangela-sangolda.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Superior Queen Room",
+      "roomId": "1563905304",
+      "beds": 1,
+      "bedTypes": [
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Sangolda",
+        "address": "322, Opposite Football Ground, Near Rust Lifestyle Shop, Saligao",
+        "city": "Sangolda",
+        "latitude": 15.5519008562585,
+        "longitude": 73.8057736406685,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-09T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 3,859.50",
+        "pricePerStayParsed": 3859.5,
+        "priceBeforeDiscountRaw": "Rs. 4,150",
+        "priceBeforeDiscountParsed": 4150,
+        "discountRaw": "Rs. 290.50",
+        "discountParsed": 290.5,
+        "excludedChargesRaw": "Rs. 192.98",
+        "excludedChargesParsed": 192.97,
+        "currency": "INR"
+      },
+      "rating": 5,
+      "reviews": {
+        "score": 9.1,
+        "count": 38,
+        "text": "Wonderful"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/851249359.jpg?k=a05ae03cbaa7d39f58fe2df0d9ba6a66513668e529cab509d2e6e513392a4bf3&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/851249359.webp?k=af941a9c76c2863aeaea2d9f2cdfcc827a54478e19e4af4d83779a39aa834cb0&o="
+      }
+    },
+    {
+      "hotelId": 16232364,
+      "title": "Ocean n' Sand - By Q23 Resorts & Suites",
+      "url": "https://www.booking.com/hotel/in/hill-crust.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "King Studio with Sofa Bed",
+      "roomId": "1623236402",
+      "beds": 2,
+      "bedTypes": [
+        "1 sofa bed",
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Candolim",
+        "address": "H.NO 324/H GROUND FLOOR, 0BAMAN WADDO 403516 LANDMARK NEAR VILLA RIVA, CANDOLIM",
+        "city": "Candolim ",
+        "latitude": 15.5102172472637,
+        "longitude": 73.7734665877819,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-07T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": false,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 6,000",
+        "pricePerStayParsed": 6000,
+        "excludedChargesRaw": "Rs. 300",
+        "excludedChargesParsed": 300,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 8.5,
+        "count": 101,
+        "text": "Very Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/904653013.jpg?k=a4b5ce803406291fec9f9a1364fc7cc695bcf595c0dafef6bb3ada654c7e0278&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/904653013.webp?k=45813bfed954bf9456ef72d632711f14ee3fbb7161804f83c71a7d30db471a91&o="
+      }
+    },
+    {
+      "hotelId": 15060546,
+      "title": "The Passport Hotel",
+      "url": "https://www.booking.com/hotel/in/the-passport.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Junior Suite with Balcony",
+      "roomId": "1506054601",
+      "beds": 1,
+      "bedTypes": [
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Assagao",
+        "address": "SY 32/7, Badem Church Road, Near Courtyard II, Assagaon",
+        "city": "Assagao",
+        "latitude": 15.6049575508628,
+        "longitude": 73.7532026866306,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-09T18:30:00Z",
+        "noPrepayment": true,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 9,600",
+        "pricePerStayParsed": 9600,
+        "priceBeforeDiscountRaw": "Rs. 16,000",
+        "priceBeforeDiscountParsed": 16000,
+        "discountRaw": "Rs. 6,400",
+        "discountParsed": 6400,
+        "excludedChargesRaw": "Rs. 1,728",
+        "excludedChargesParsed": 1728,
+        "currency": "INR"
+      },
+      "reviews": {
+        "score": 8.9,
+        "count": 45,
+        "text": "Excellent"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/805069908.jpg?k=54143ea42909e5d2a2b61ab22cd613e1f3e5f5c6fcab44c6968fa62d2f028add&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/805069908.webp?k=1ba89450e8f003bff1a3c058b761aead8b3579fffd71f2e28f93eeb97a0cedce&o="
+      }
+    },
+    {
+      "hotelId": 15112461,
+      "title": "Seaside Cliff",
+      "url": "https://www.booking.com/hotel/in/albatross-panaji.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Deluxe Queen Suite",
+      "roomId": "1511246117",
+      "beds": 1,
+      "bedTypes": [
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Calangute",
+        "address": "Calangute road, Khobra, Vaddo, Calangute",
+        "city": "Baga Goa",
+        "latitude": 15.5464694397806,
+        "longitude": 73.7567942659328,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-07T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": false,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 6,000",
+        "pricePerStayParsed": 6000,
+        "excludedChargesRaw": "Rs. 300",
+        "excludedChargesParsed": 300,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 9,
+        "count": 91,
+        "text": "Wonderful"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/921554082.jpg?k=43731da0f09e4d97f9982fa532624f83b09962fe8ca8264f4d9a11dfcbe2a69f&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/921554082.webp?k=41d8131cd2fb7f46eac847341007d9dc56cef18d9de1ac5ae57f3201dec468a4&o="
+      }
+    },
+    {
+      "hotelId": 5788419,
+      "title": "Silent Beach Resort",
+      "url": "https://www.booking.com/hotel/in/silet-beach-resort.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Deluxe Double Room",
+      "roomId": "578841904",
+      "beds": 1,
+      "bedTypes": [
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Mandrem",
+        "address": "H216, Ahwem, Mandrem",
+        "city": "Mandrem",
+        "latitude": 15.645254,
+        "longitude": 73.717909,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": false,
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 7,200",
+        "pricePerStayParsed": 7200,
+        "excludedChargesRaw": "Rs. 360",
+        "excludedChargesParsed": 360,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 8.7,
+        "count": 143,
+        "text": "Excellent",
+        "secondaryScore": 9.5,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/416324610.jpg?k=8562f90ee8cd857a040684a37fff77714e408dd33530dc67b64ad6929dab9676&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/416324610.webp?k=2a04a253642938ed335be403003c6c9af5289b9a490fc08a05bd67ff78daca84&o="
+      }
+    },
+    {
+      "hotelId": 16337719,
+      "title": "Perfectstayz Premium Carnival Suites Near Candolim",
+      "url": "https://www.booking.com/hotel/in/green-goa.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "One-Bedroom Apartment with Balcony",
+      "roomId": "1633771904",
+      "beds": 2,
+      "bedTypes": [
+        "1 sofa bed",
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Pilerne",
+        "address": "458",
+        "city": "Pilern",
+        "latitude": 15.5195809110914,
+        "longitude": 73.7997051464991,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-11T18:30:00Z",
+        "noPrepayment": true,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 6,812.07",
+        "pricePerStayParsed": 6812.07,
+        "priceBeforeDiscountRaw": "Rs. 9,205.50",
+        "priceBeforeDiscountParsed": 9205.5,
+        "discountRaw": "Rs. 2,393.43",
+        "discountParsed": 2393.43,
+        "excludedChargesRaw": "Rs. 340.60",
+        "excludedChargesParsed": 340.6,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 8.5,
+        "count": 34,
+        "text": "Very Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/872957255.jpg?k=85eaba5f57541339d733cc1ca8154b58f69bf1d092ab5c43c7c50d6bb89c0d87&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/872957255.webp?k=e5a80aa8ca79e91dbd238f05d3b9e6c7624401cd8ce8bd3aa23f06b614e70c8c&o="
+      }
+    },
+    {
+      "hotelId": 1787375,
+      "title": "Fairfield by Marriott Goa Anjuna",
+      "url": "https://www.booking.com/hotel/in/fairfield-by-marriott-goa-anjuna.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Fairfield Twin Room with Balcony - 02 Complimentary Pints of Beer on Arrival",
+      "roomId": "178737511",
+      "beds": 2,
+      "bedTypes": [
+        "2 twin beds"
+      ],
+      "location": {
+        "locationTitle": "Anjuna",
+        "address": "Survey No.11/14, Plot B,C & E Simvaddo, Anjuna, Bardez",
+        "city": "Anjuna",
+        "latitude": 15.5761198718845,
+        "longitude": 73.7578962184489,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-07T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 9,000",
+        "pricePerStayParsed": 9000,
+        "excludedChargesRaw": "Rs. 1,620",
+        "excludedChargesParsed": 1620,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 7.4,
+        "count": 642,
+        "text": "Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/649443786.jpg?k=0fbe67ec4fcab3daf8682f5d2bb9d93d3035d6626db19c1e91b98efb529bed2e&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/649443786.webp?k=2a6fc6c003e1301f8b2a686c03111f04a1ca862d6e5e7c009a5fd82dea1198ed&o="
+      }
+    },
+    {
+      "hotelId": 16535583,
+      "title": "Roseal Beach Front",
+      "url": "https://www.booking.com/hotel/in/crest-crew.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Family Room with Balcony",
+      "roomId": "1653558302",
+      "beds": 1,
+      "bedTypes": [
+        "1 queen bed"
+      ],
+      "location": {
+        "locationTitle": "Baga",
+        "address": "Baga beach,, Saunta Vaddo , Baga",
+        "city": "Sangolda",
+        "latitude": 15.5599707421078,
+        "longitude": 73.7509109683289,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-07T18:30:00Z",
+        "noPrepayment": true,
+        "childStaysForFree": false,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 4,000",
+        "pricePerStayParsed": 4000,
+        "excludedChargesRaw": "Rs. 200",
+        "excludedChargesParsed": 200,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 8.9,
+        "count": 185,
+        "text": "Excellent",
+        "secondaryScore": 9.4,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/896449100.jpg?k=c30c79e697ab38ae87949829fbc25a0f28b078fb87d7a55f457b871e9d83c152&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/896449100.webp?k=97ef3231b9fce19174731ab6cc222ce71229af4eb851cc7aa713373adc9e9a1c&o="
+      }
+    },
+    {
+      "hotelId": 10657435,
+      "title": "Hyatt Place Goa Candolim",
+      "url": "https://www.booking.com/hotel/in/hyatt-place-goa-candolim-candolim.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "King Room with Balcony - 10% off on À la carte orders only at Zing Restaurant ",
+      "roomId": "1065743502",
+      "beds": 1,
+      "bedTypes": [
+        "1 king bed"
+      ],
+      "location": {
+        "locationTitle": "Candolim",
+        "address": "Baman Vaddo, Fort Aguada Road, Bardez",
+        "city": "Candolim",
+        "latitude": 15.510543,
+        "longitude": 73.769499,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-10T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 14,000",
+        "pricePerStayParsed": 14000,
+        "excludedChargesRaw": "Rs. 2,520",
+        "excludedChargesParsed": 2520,
+        "currency": "INR"
+      },
+      "rating": 5,
+      "reviews": {
+        "score": 8.3,
+        "count": 1193,
+        "text": "Very Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/490448709.jpg?k=17fa37cf293c99b13c2a384f936f79c68acbc68331234687ee6123855b522cf2&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/490448709.webp?k=d243b733f8569819abcee72df9a8d426a6fc6636aac19a4e7aa7cc16d5a94812&o="
+      }
+    },
+    {
+      "hotelId": 2591651,
+      "title": "Joets Guesthouse",
+      "url": "https://www.booking.com/hotel/in/joets-guesthouse.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Double or Twin Room with Restricted Side Sea View",
+      "roomId": "259165104",
+      "beds": 2,
+      "bedTypes": [
+        "2 twin beds"
+      ],
+      "location": {
+        "locationTitle": "Bogmalo",
+        "address": "Ballichal Ward",
+        "city": "Bogmalo",
+        "latitude": 15.370808964787,
+        "longitude": 73.8326634576722,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-11T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 7,500",
+        "pricePerStayParsed": 7500,
+        "excludedChargesRaw": "Rs. 375",
+        "excludedChargesParsed": 375,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 8.8,
+        "count": 104,
+        "text": "Excellent",
+        "secondaryScore": 9.7,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/499065731.jpg?k=2686a98ec1b6b1a12027c976b9754655c1ca05548c5d83fd38944b7532f06145&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/499065731.webp?k=42dee1fb93f3806b49e2023e83158e46821eaf1cd022b79ff48b7edfe68fb54d&o="
+      }
+    },
+    {
+      "hotelId": 13823795,
+      "title": "Foxoso Aaristo Baga Beach Resort",
+      "url": "https://www.booking.com/hotel/in/foxoso-aaristo-baga-beach-resort-calangute.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Deluxe Room with Complimentary Pint of Beer on arrival , 15% off on Food & Beverages Services and Complimentary Hi-Tea",
+      "roomId": "1382379501",
+      "beds": 1,
+      "bedTypes": [
+        "1 full bed"
+      ],
+      "location": {
+        "locationTitle": "Calangute",
+        "address": "Club Titos",
+        "city": "Calangute",
+        "latitude": 15.5560854229413,
+        "longitude": 73.7520007617316,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-10-30T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 9,639",
+        "pricePerStayParsed": 9639,
+        "priceBeforeDiscountRaw": "Rs. 11,340",
+        "priceBeforeDiscountParsed": 11340,
+        "discountRaw": "Rs. 1,701",
+        "discountParsed": 1701,
+        "excludedChargesRaw": "Rs. 1,735.02",
+        "excludedChargesParsed": 1735.02,
+        "currency": "INR"
+      },
+      "reviews": {
+        "score": 8.3,
+        "count": 20,
+        "text": "Very Good",
+        "secondaryScore": 9.3,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/886454246.jpg?k=d1e5bf430d290220864129967552ef9c450271e36ccaafe6c357479401090d74&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/886454246.webp?k=211f4ce925a3dee289119543e4af820853bdcd7361e1be5ff71ebb664d38b9b8&o="
+      }
+    },
+    {
+      "hotelId": 350650,
+      "title": "Kenilworth Resort & Spa, Goa",
+      "url": "https://www.booking.com/hotel/in/the-kenilworth-goa.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "    Ocean View Room with Happy Hour (5-7 PM), Unlimited Tea / Coffee / Non Alcoholic Drink at Lobby BAR / Food, Beverage & Spa  Discount",
+      "roomId": "35065008",
+      "beds": 1,
+      "bedTypes": [
+        "1 full bed"
+      ],
+      "location": {
+        "locationTitle": "Utorda",
+        "address": "Utorda, Salcete",
+        "city": "Utorda",
+        "latitude": 15.3189897059952,
+        "longitude": 73.902867436409,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-05T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 23,332.50",
+        "pricePerStayParsed": 23332.5,
+        "excludedChargesRaw": "Rs. 4,199.85",
+        "excludedChargesParsed": 4199.85,
+        "currency": "INR"
+      },
+      "rating": 5,
+      "reviews": {
+        "score": 8.7,
+        "count": 546,
+        "text": "Excellent"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/353681663.jpg?k=9edf1c6325b9b500338f5be6fcc276a4ffe43e62c630348faf8f3df29f9decf3&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/353681663.webp?k=98e6ef04334b250089a495db431b025af829c16c1216289a5b3841d109041824&o="
+      }
+    },
+    {
+      "hotelId": 2146984,
+      "title": "Oxygen Palolem",
+      "url": "https://www.booking.com/hotel/in/oxygen-palolem.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Deluxe King Suite",
+      "roomId": "214698439",
+      "beds": 1,
+      "bedTypes": [
+        "1 king bed"
+      ],
+      "location": {
+        "locationTitle": "Palolem",
+        "address": "Palolem Beach, Canacona",
+        "city": "Palolem",
+        "latitude": 15.0120364302252,
+        "longitude": 74.0207934379578,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-05T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 6,494.40",
+        "pricePerStayParsed": 6494.4,
+        "excludedChargesRaw": "Rs. 324.72",
+        "excludedChargesParsed": 324.72,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 7.7,
+        "count": 369,
+        "text": "Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/504681564.jpg?k=8dc2042c7be62db1218fe73364c24820e1b9bd420f6f133af19cd199dc651d9d&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/504681564.webp?k=88df42c0d2f07d679f16f31bed743a43601998803dd1a4e27161823a03837066&o="
+      }
+    },
+    {
+      "hotelId": 6278472,
+      "title": "Buena Vida Beach Resort",
+      "url": "https://www.booking.com/hotel/in/buena-vida.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Double Room with Sea View with 10% off on Spa access & Complimentary Private Jacuzzi",
+      "roomId": "627847201",
+      "beds": 1,
+      "bedTypes": [
+        "1 full bed"
+      ],
+      "location": {
+        "locationTitle": "Morjim",
+        "address": "131/1 Vithaldas Wada Morjim Beach, Morjim, Pernem",
+        "city": "Morjim",
+        "latitude": 15.624758,
+        "longitude": 73.729131,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-05T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 14,000",
+        "pricePerStayParsed": 14000,
+        "excludedChargesRaw": "Rs. 2,520",
+        "excludedChargesParsed": 2520,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 9,
+        "count": 75,
+        "text": "Wonderful",
+        "secondaryScore": 9.5,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/282419083.jpg?k=d53520609fdd1c2db9d07ef597aa8530d83e711a60d2dc1261564fe04e0d43f5&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/282419083.webp?k=6eeb2a0900b308f81d60078f9ab539d76881e1aada3746128de1a0092c736a8f&o="
+      }
+    },
+    {
+      "hotelId": 13806767,
+      "title": "Holitel Anjuna",
+      "url": "https://www.booking.com/hotel/in/holitel-anjuna.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Holitel Room",
+      "roomId": "1380676702",
+      "beds": 1,
+      "bedTypes": [
+        "1 king bed"
+      ],
+      "location": {
+        "locationTitle": "Arpora",
+        "address": "Arpora holitel hotel anjuna",
+        "city": "Arpora",
+        "latitude": 15.5632261,
+        "longitude": 73.7646526,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": false,
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 6,215.55",
+        "pricePerStayParsed": 6215.55,
+        "priceBeforeDiscountRaw": "Rs. 11,301",
+        "priceBeforeDiscountParsed": 11301,
+        "discountRaw": "Rs. 5,085.45",
+        "discountParsed": 5085.45,
+        "excludedChargesRaw": "Rs. 310.78",
+        "excludedChargesParsed": 310.78,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 8.7,
+        "count": 10,
+        "text": "Excellent"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/661809363.jpg?k=44882f2dc490bf04c3fa9b2ffdaa8b18c39a2234cb236a554343070ee33aaadd&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/661809363.webp?k=2bd670cdcd8657ef86dab6cf6779352552921aacb18d5b9334250baf62996514&o="
+      }
+    },
+    {
+      "hotelId": 482965,
+      "title": "Club Mahindra Emerald Palms, Goa",
+      "url": "https://www.booking.com/hotel/in/club-mahindra-emerald-palms-goa.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Superior Room",
+      "roomId": "48296501",
+      "beds": 1,
+      "bedTypes": [
+        "1 king bed"
+      ],
+      "location": {
+        "locationTitle": "Varca",
+        "address": "PeddaUttorDoxi, Varca, Salcete",
+        "city": "Benaulim",
+        "latitude": 15.238606761211,
+        "longitude": 73.9296412467957,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-07T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 11,700",
+        "pricePerStayParsed": 11700,
+        "priceBeforeDiscountRaw": "Rs. 13,000",
+        "priceBeforeDiscountParsed": 13000,
+        "discountRaw": "Rs. 1,300",
+        "discountParsed": 1300,
+        "excludedChargesRaw": "Rs. 2,106",
+        "excludedChargesParsed": 2106,
+        "currency": "INR"
+      },
+      "rating": 5,
+      "reviews": {
+        "score": 7.2,
+        "count": 37,
+        "text": "Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/269407151.jpg?k=1da685aeadfe6ce3266a20b85b1a47bebf7c3b5e271c1bc7a9dd0d5ddfa36f3f&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/269407151.webp?k=d07d9d0c2d6e27ee1425d27744bcc7f402c34d55d7ea255099ef7376748821ab&o="
+      }
+    },
+    {
+      "hotelId": 309777,
+      "title": "Fortune Resort Benaulim Goa - Member ITC Hotels' Group",
+      "url": "https://www.booking.com/hotel/in/joecons-beach-resort.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Deluxe Double Room - 20% discount on Food & Beverages and Laundry - Transfers to nearest Beach - Happy Hours 1+1 (Inhouse brands from 4pm to 9pm) ",
+      "roomId": "30977701",
+      "beds": 1,
+      "bedTypes": [
+        "1 king bed"
+      ],
+      "location": {
+        "locationTitle": "Benaulim",
+        "address": "1795/H, Calwaddo",
+        "city": "Benaulim",
+        "latitude": 15.2461788246569,
+        "longitude": 73.9300328493118,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-10T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 10,999.99",
+        "pricePerStayParsed": 10999.99,
+        "excludedChargesRaw": "Rs. 1,980",
+        "excludedChargesParsed": 1980,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 8.1,
+        "count": 315,
+        "text": "Very Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/452694914.jpg?k=cd1ac5de20506dab5fc91025d9f3cd6d63e72f69d3e770e71ee6ee31acfc3dc5&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/452694914.webp?k=f77d382fa741c1aaf1a0b18d2156fce00d567048ada5cf43905d8cd56acefe57&o="
+      }
+    },
+    {
+      "hotelId": 17196615,
+      "title": "Zac Beachfront Resort",
+      "url": "https://www.booking.com/hotel/in/zbr-calangute-calangute.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Double Room with Garden View",
+      "roomId": "1719661501",
+      "beds": 1,
+      "bedTypes": [
+        "1 full bed"
+      ],
+      "location": {
+        "locationTitle": "Calangute",
+        "address": "NV Beach Road",
+        "city": "Calangute",
+        "latitude": 15.5402749209626,
+        "longitude": 73.7568456511965,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-13T12:30:00Z",
+        "noPrepayment": true,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 7,899.21",
+        "pricePerStayParsed": 7899.21,
+        "priceBeforeDiscountRaw": "Rs. 9,999",
+        "priceBeforeDiscountParsed": 9999,
+        "discountRaw": "Rs. 2,099.79",
+        "discountParsed": 2099.79,
+        "excludedChargesRaw": "Rs. 1,421.86",
+        "excludedChargesParsed": 1421.86,
+        "currency": "INR"
+      },
+      "reviews": {
+        "score": 8.9,
+        "count": 12,
+        "text": "Excellent",
+        "secondaryScore": 9.8,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/927233137.jpg?k=15a7303cd348e28b1f065d229faa60c96d7e3156d254c3150da31aea7991fe1d&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/927233137.webp?k=db1007caea7257094ea2480a254cd9f6cf81a4c85b61f3b673a7468e11e36630&o="
+      }
+    },
+    {
+      "hotelId": 4607522,
+      "title": "Tangerine Boutique Resort",
+      "url": "https://www.booking.com/hotel/in/tangerine-clarks-inn.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Deluxe Triple Room",
+      "roomId": "460752208",
+      "beds": 2,
+      "bedTypes": [
+        "1 king bed",
+        "1 futon bed"
+      ],
+      "location": {
+        "locationTitle": "Calangute",
+        "address": "Naikowaddo, Calangute - Baga Rd, Near St. Anthony Chapel",
+        "city": "Calangute",
+        "latitude": 15.538842,
+        "longitude": 73.764587,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-13T08:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": false,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 5,000",
+        "pricePerStayParsed": 5000,
+        "excludedChargesRaw": "Rs. 250",
+        "excludedChargesParsed": 250,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 6.6,
+        "count": 94,
+        "text": "Review score"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/206397435.jpg?k=0b07573d54fe3e4913a6616c8546edeb12262b8d21ee2c3388aa1f1abbe5ec11&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/206397435.webp?k=0de3324f009daaa6aba6e0e5bdc4bac16dbdf32b244cfe5b855bb011582ab8f4&o="
+      }
+    },
+    {
+      "hotelId": 15386089,
+      "title": "Unseen Boutique Hotel, Assagao",
+      "url": "https://www.booking.com/hotel/in/unseen-boutique.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Signature Suite Room with Bathtub",
+      "roomId": "1538608903",
+      "beds": 1,
+      "bedTypes": [
+        "1 full bed"
+      ],
+      "location": {
+        "locationTitle": "Assagao",
+        "address": "Unseen Boutique Hotels SURVEY NO 90/3",
+        "city": "Assagao",
+        "latitude": 15.600692,
+        "longitude": 73.7643768,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-05T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 15,114.98",
+        "pricePerStayParsed": 15114.98,
+        "priceBeforeDiscountRaw": "Rs. 17,176.11",
+        "priceBeforeDiscountParsed": 17176.11,
+        "discountRaw": "Rs. 2,061.13",
+        "discountParsed": 2061.13,
+        "excludedChargesRaw": "Rs. 2,720.70",
+        "excludedChargesParsed": 2720.7,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 8.3,
+        "count": 13,
+        "text": "Very Good"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/789371899.jpg?k=ab3816ca226aa95a669a49fb423f863f6d6843909de52979498296579cdb35e2&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/789371899.webp?k=9fbac6ef76a5e46b54662c6a4ba1d1586193cdfa2a1248d0df1823ed394f491f&o="
+      }
+    },
+    {
+      "hotelId": 16976904,
+      "title": "Hotel Carnival The Goa",
+      "url": "https://www.booking.com/hotel/in/pilerne-goa.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "One-Bedroom Apartment with Balcony",
+      "roomId": "1697690405",
+      "beds": 2,
+      "bedTypes": [
+        "1 king bed",
+        "1 sofa bed"
+      ],
+      "location": {
+        "locationTitle": "Pilerne",
+        "address": "Industrial Estate",
+        "city": "Pilern",
+        "latitude": 15.5232218642424,
+        "longitude": 73.7968667632477,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-11T18:30:00Z",
+        "noPrepayment": false,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 6,453.54",
+        "pricePerStayParsed": 6453.54,
+        "priceBeforeDiscountRaw": "Rs. 8,721",
+        "priceBeforeDiscountParsed": 8721,
+        "discountRaw": "Rs. 2,267.46",
+        "discountParsed": 2267.46,
+        "excludedChargesRaw": "Rs. 322.68",
+        "excludedChargesParsed": 322.68,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 7.7,
+        "count": 4,
+        "text": "Good",
+        "secondaryScore": 10,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/902880606.jpg?k=0687d88ff463aaf7d1228e620f3010e8028daf83af3b95f1035e027b06bde1c3&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/902880606.webp?k=8d92328f595676967aaeb0f153727f367908f57d7129fc8b138ae40361323612&o="
+      }
+    },
+    {
+      "hotelId": 5708390,
+      "title": "Mandrem Beach Resort, a member of Radisson Individuals Retreat",
+      "url": "https://www.booking.com/hotel/in/regenta-place-mandrem-beach-resort.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Superior Room - 1 child below 12 stays for free (upto March 2027 check-in) + Beer on arrival + Happy Hours (6-8PM) - INR 500 Credit for Food & Soft Beverages per room per stay (Cannot be clubbed with Happy Hours)",
+      "roomId": "570839014",
+      "beds": 1,
+      "bedTypes": [
+        "1 king bed"
+      ],
+      "location": {
+        "locationTitle": "Mandrem",
+        "address": "Junas Waddo, North Goa",
+        "city": "Mandrem",
+        "latitude": 15.6621353788407,
+        "longitude": 73.7132908968201,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-09T18:30:00Z",
+        "noPrepayment": true,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 15,000",
+        "pricePerStayParsed": 15000,
+        "excludedChargesRaw": "Rs. 2,700",
+        "excludedChargesParsed": 2700,
+        "currency": "INR"
+      },
+      "rating": 4,
+      "reviews": {
+        "score": 9,
+        "count": 503,
+        "text": "Wonderful"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/538751217.jpg?k=fc186e2428063afc33ef3ac6cd1382806a39796ee58238afbf44415b49d17201&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/538751217.webp?k=6d6a31d79a1a86499225bed7fd9e1f2cc35cd2572dde28bd1d9f19e0d6c8fd4b&o="
+      }
+    },
+    {
+      "hotelId": 15536097,
+      "title": "The Racha Agonda",
+      "url": "https://www.booking.com/hotel/in/the-racha-agonda.html?checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&group_children=1&lang=en-us&selected_currency=INR&age=5&dest_id=4127&dest_type=region",
+      "room": "Deluxe Double Room with Balcony",
+      "roomId": "1553609703",
+      "beds": 1,
+      "bedTypes": [
+        "1 twin bed"
+      ],
+      "location": {
+        "locationTitle": "Agonda",
+        "address": "Agonda Beach Road The Racha Agonda",
+        "city": "Agonda",
+        "latitude": 15.0497792,
+        "longitude": 73.9834502,
+        "centrallyLocated": false
+      },
+      "policies": {
+        "freeCancellation": true,
+        "freeCancellationUntil": "2026-11-13T12:30:00Z",
+        "noPrepayment": true,
+        "childStaysForFree": true,
+        "petsAllowedForFree": false
+      },
+      "price": {
+        "pricePerStayRaw": "Rs. 4,000",
+        "pricePerStayParsed": 4000,
+        "excludedChargesRaw": "Rs. 200",
+        "excludedChargesParsed": 200,
+        "currency": "INR"
+      },
+      "rating": 3,
+      "reviews": {
+        "score": 8.7,
+        "count": 16,
+        "text": "Excellent",
+        "secondaryScore": 9.5,
+        "secondaryText": "Location"
+      },
+      "photo": {
+        "jpg": "https://cf.bstatic.com/xdata/images/hotel/square600/804709877.jpg?k=63368176e20bd4b5dac31c3e5bbd7e4fead9324d32dede32ef5b109941b46480&o=",
+        "webp": "https://cf.bstatic.com/xdata/images/hotel/square600/804709877.webp?k=7574ad89961dd1c8938495e19a7c40bb6c4b089cb9229a1d341f03e2a07e941d&o="
+      }
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "totalResults": 1861,
+    "totalPages": 75,
+    "nextPageToken": "eyJzZXNzaW9uSWQiOiI5ZGVkYTk1MS0xODRmLTRmOWUtODlkZS0zMjkzN2IzOWZiMWYiLCJuZXh0T2Zmc2V0IjoyNSwiaXNzdWVkQXQiOiIyMDI2LTEwLTMwVDA3OjQwOjE3Ljk1NFoifQ=="
+  }
+}

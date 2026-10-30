@@ -1,0 +1,598 @@
+{
+  "requestMetadata": {
+    "id": "b2c79d4f-c64f-49c5-a681-af491c042753",
+    "status": "ok",
+    "html": "https://files.hasdata.com/L4V6FrLt6mfhQ7Q0D8h3IldLzym2/b2c79d4f-c64f-49c5-a681-af491c042753.html",
+    "json": "https://files.hasdata.com/L4V6FrLt6mfhQ7Q0D8h3IldLzym2/b2c79d4f-c64f-49c5-a681-af491c042753.json",
+    "url": "https://www.airbnb.com/s/Goa/homes?checkin=2026-11-13&checkout=2026-11-14&adults=2&children=1"
+  },
+  "properties": [
+    {
+      "id": "1760934337572700408",
+      "url": "https://www.airbnb.com/rooms/1760934337572700408",
+      "title": "Apartment in Mapusa",
+      "latitude": 15.6011,
+      "longitude": 73.8093,
+      "description": "Onsen by Earthen Window | Hilltop | near Assagao ",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760934337572700408/original/a393a5e5-552b-4dcf-be0f-c3588e98bac4.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760934337572700408/original/d27f60c4-5cc7-415f-9fa8-7316a6dd0fc4.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760934337572700408/original/a44edbda-9fb8-485e-9f4d-47d8377d819f.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760934337572700408/original/098742cb-fd32-4a28-a749-df028b91bc66.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760934337572700408/original/83088559-4d21-47fb-93d2-7eb2d5bf724a.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760934337572700408/original/441c5107-9570-45d8-bdbf-afa636bfb4e9.png"
+      ],
+      "rating": 5,
+      "reviews": 12,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$95",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $94.60",
+            "price": "$94.60"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1351278343226898024",
+      "url": "https://www.airbnb.com/rooms/1351278343226898024",
+      "title": "Condo in Arpora",
+      "latitude": 15.5753,
+      "longitude": 73.761,
+      "description": "1BHK Apartment w/Pool, Wifi, Parking, Maid, Secure",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1351278343226898024/original/a7c162a9-8d8b-4b77-b85c-94430b96cdb4.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1351278343226898024/original/f8f5d854-6a41-4532-987c-265dd1cdb68a.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1351278343226898024/original/6f2cd060-f858-45e9-b36b-f07bd055b8d2.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1351278343226898024/original/3e08f26c-f189-4c7d-abbe-c22ab3957cc4.jpg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM1MTI3ODM0MzIyNjg5ODAyNA%3D%3D/original/5e97f27f-9e65-4930-8c9d-8e9d7b3c74d6.jpeg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1351278343226898024/original/2a16aec2-35e9-48d3-abe5-28fa7263c54d.jpg"
+      ],
+      "rating": 5,
+      "reviews": 20,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$45",
+        "discountedPrice": "$38",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $44.18",
+            "price": "$44.18"
+          },
+          {
+            "description": "Special offer",
+            "price": "-$6.63"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1760106862173275928",
+      "url": "https://www.airbnb.com/rooms/1760106862173275928",
+      "title": "Apartment in Canacona",
+      "latitude": 14.998,
+      "longitude": 74.0366,
+      "description": "HappyHeaven @Sosa Homestays | Pool+Beach 300m Away",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760106862173275928/original/94d6ff0c-af6f-4bfd-83a1-f4edcd163cdc.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760106862173275928/original/6b29f940-b0c8-4135-825a-073f8ca3cd07.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760106862173275928/original/cc3e4d16-b960-49a6-9c6c-ec3ac0881fd2.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760106862173275928/original/7aca8349-9aca-4809-9fd2-e199e7e79ca2.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760106862173275928/original/28858c2b-f8da-4782-bf1f-a18fbcb47a0a.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760106862173275928/original/2b93bfea-495d-4fe1-801a-862a377966b0.png"
+      ],
+      "rating": 5,
+      "reviews": 4,
+      "badges": [
+        "Superhost"
+      ],
+      "price": {
+        "originalPrice": "$52",
+        "discountedPrice": "$43",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $51.33",
+            "price": "$51.33"
+          },
+          {
+            "description": "Special offer",
+            "price": "-$8.69"
+          }
+        ]
+      }
+    },
+    {
+      "id": "945602113861113871",
+      "url": "https://www.airbnb.com/rooms/945602113861113871",
+      "title": "Room in Nerul",
+      "latitude": 15.5076,
+      "longitude": 73.7948,
+      "description": "Grand Portuguese Heritage Loft • 150-Year Home",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-945602113861113871/original/38708c5c-b9a2-4921-8ffb-acd09b042ca6.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-945602113861113871/original/3aa4213e-ef9e-4472-944e-40bf1253d32e.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-945602113861113871/original/c3eda357-0971-4f99-9994-1f264c27d2ce.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-945602113861113871/original/65eb8798-f2e6-4175-9f8e-fb1074783794.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-945602113861113871/original/107ea895-29d7-4e6a-863f-00be1c345946.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-945602113861113871/original/12549266-04c6-423b-9b6d-4a02541c3eba.png"
+      ],
+      "rating": 4.81,
+      "reviews": 16,
+      "badges": [
+        "Superhost"
+      ],
+      "price": {
+        "originalPrice": "$70",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $69.05",
+            "price": "$69.05"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1644809415979207573",
+      "url": "https://www.airbnb.com/rooms/1644809415979207573",
+      "title": "Apartment in Vagator",
+      "latitude": 15.5993,
+      "longitude": 73.7422,
+      "description": "Vagator Haus | Luxury - Pool - Beach - Comfort",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1644809415979207573/original/e1334be7-09aa-4b5b-9b7d-50e8a8e39e8f.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1644809415979207573/original/3a231323-9a5c-4c10-aef4-8356a7d3eb51.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1644809415979207573/original/5087400a-9b0c-42d4-a100-1cbcb1944690.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1644809415979207573/original/7ed882c2-9dd1-4145-9ade-64db5685299f.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1644809415979207573/original/925e8895-589e-4def-be0f-0f5740448943.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1644809415979207573/original/d367fd92-7a0d-440a-8c7e-ed04af804e8c.jpeg"
+      ],
+      "rating": 4.98,
+      "reviews": 45,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$38",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $37.84",
+            "price": "$37.84"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1286579977224581326",
+      "url": "https://www.airbnb.com/rooms/1286579977224581326",
+      "title": "Cabin in Mandrem",
+      "latitude": 15.6727,
+      "longitude": 73.7176,
+      "description": "Romantic A-Frame:Aranya| Luxury Hammock Villa| Goa",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI4NjU3OTk3NzIyNDU4MTMyNg%3D%3D/original/ea05209d-f914-421b-892b-15fa60619b50.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI4NjU3OTk3NzIyNDU4MTMyNg==/original/b578f2b4-0f90-4e62-8ad1-bed9f22464ba.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1286579977224581326/original/014f6631-2c61-491e-b653-ecee847b5cf8.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI4NjU3OTk3NzIyNDU4MTMyNg==/original/a04d02b8-b2dc-4d57-b3f4-df13f4ccc815.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI4NjU3OTk3NzIyNDU4MTMyNg==/original/4bd2f087-0295-4024-a4b5-5c99f2b1707b.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1286579977224581326/original/70a1d014-d18d-4109-9c3e-d7cbd7a7aba2.jpeg"
+      ],
+      "rating": 4.94,
+      "reviews": 106,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$74",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $73.22",
+            "price": "$73.22"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1768139303169876398",
+      "url": "https://www.airbnb.com/rooms/1768139303169876398",
+      "title": "Condo in Arpora",
+      "latitude": 15.5713,
+      "longitude": 73.7688,
+      "description": "Hillside Haven by Rovana | Hill View • Pool • Baga",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1768139303169876398/original/ecd7a83f-263b-494b-ade7-cf15e5367a4a.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1768139303169876398/original/4056ea5f-e62d-48a3-96b1-11cdb7b0dabe.jpeg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1768139303169876398/original/4e8c2152-c9bc-4876-bf95-576fdf3ecf63.jpg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1768139303169876398/original/b2ad67a3-6cf6-4a97-bbca-75759f08cf22.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1768139303169876398/original/c032d5c9-ce8c-4d6e-a7db-f79b898ee8d7.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1768139303169876398/original/e11782e2-8ba9-45d3-9734-e30e26799361.jpeg"
+      ],
+      "rating": 5,
+      "reviews": 15,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$45",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $44.91",
+            "price": "$44.91"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1760296963135336284",
+      "url": "https://www.airbnb.com/rooms/1760296963135336284",
+      "title": "Apartment in Assagao",
+      "latitude": 15.6007,
+      "longitude": 73.7967,
+      "description": "Amora 1bhk | 10 Min from Anjuna",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760296963135336284/original/463a109f-c04c-44bf-92f7-a1e1ffaf94ef.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760296963135336284/original/c822ee63-696c-4b9c-92d7-09cca350eaae.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760296963135336284/original/beb9f8ab-22d7-4e22-8290-00685531a70c.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760296963135336284/original/3aad3f49-3ef3-479b-98fd-3bc559d49280.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760296963135336284/original/5279a372-4046-43f7-a62c-ea9accdedb78.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1760296963135336284/original/3f58c6af-24f9-4923-bb9d-bf926095ef45.jpeg"
+      ],
+      "rating": 5,
+      "reviews": 10,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$46",
+        "discountedPrice": "$33",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $32.58",
+            "price": "$32.58"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1579801766557743827",
+      "url": "https://www.airbnb.com/rooms/1579801766557743827",
+      "title": "Apartment in Calangute",
+      "latitude": 15.5227,
+      "longitude": 73.7724,
+      "description": "Candolim Jacuzzi Cove 4 | Tarashi Homes",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1579801766557743827/original/06d6e7e2-771b-481b-8b39-4930ceb11f83.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1579801766557743827/original/55aa0cdb-4384-419f-b218-d4cf641363ec.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1579801766557743827/original/ed041870-25e5-4a88-ba19-22504ae33482.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1577660523707401868/original/3ebe88ee-f51b-4dc1-be71-c98d9a3b4453.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1579801766557743827/original/2b5e6df6-ebe5-4737-a692-dd95ef1c4e74.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1579801766557743827/original/a1bc1214-263a-4467-b307-a6f605511dc7.jpeg"
+      ],
+      "rating": 4.98,
+      "reviews": 43,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$71",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $70.30",
+            "price": "$70.30"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1582243952649938243",
+      "url": "https://www.airbnb.com/rooms/1582243952649938243",
+      "title": "Condo in Arpora",
+      "latitude": 15.5707,
+      "longitude": 73.7662,
+      "description": "Wildernest: Cozy Studio Near Baga & Anjuna",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1582243952649938243/original/c174dd37-73b1-4d32-929e-aced4eb8bc1f.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1582243952649938243/original/295a85f2-5eaf-4cad-8ac1-4de3866c00a5.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1582243952649938243/original/1692a0ec-d878-4cde-b036-6f497dbcae8d.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1582243952649938243/original/9eeab2a0-062f-4eac-9315-6d48210bc53c.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1582243952649938243/original/3c591796-fa32-485c-b1ee-42137b353225.jpg",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-1582243952649938243/original/353280d0-b716-4415-9a8f-dbe35e89aebe.jpg"
+      ],
+      "rating": 5,
+      "reviews": 91,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$36",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $35.22",
+            "price": "$35.22"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1625147915303606225",
+      "url": "https://www.airbnb.com/rooms/1625147915303606225",
+      "title": "Apartment in Chapora",
+      "latitude": 15.59824,
+      "longitude": 73.74343,
+      "description": "Bright Boho Studio | Pool | 3 Min to Vagator Beach",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1625147915303606225/original/1607fb2e-7d2b-40a3-a3f6-d4c79fba90f7.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1625147915303606225/original/d7715294-29f1-494f-98fc-36cdc4b47ce6.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1625147915303606225/original/16ae23c1-e4df-442c-abdd-083458b394c6.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1625147915303606225/original/b4511e66-0b21-44a3-b484-ed615fe79212.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1625147915303606225/original/70b91ca6-5c9e-41f5-9944-70d48df61022.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1625147915303606225/original/d1679603-1b83-46d5-8710-94e36f5c7540.jpeg"
+      ],
+      "rating": 4.85,
+      "reviews": 33,
+      "badges": [
+        "Superhost"
+      ],
+      "price": {
+        "originalPrice": "$36",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $35.74",
+            "price": "$35.74"
+          }
+        ]
+      }
+    },
+    {
+      "id": "40145225",
+      "url": "https://www.airbnb.com/rooms/40145225",
+      "title": "Apartment in Nerul",
+      "latitude": 15.51275,
+      "longitude": 73.78552,
+      "description": "Urban 2 Bedroom Apartment In Nerul With Pool",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/329640f2-f006-4a4c-a3e3-6e7a3183b6ba.jpg",
+        "https://a0.muscache.com/im/pictures/20598b3b-661e-41e3-80f3-ab71ded1ea4a.jpg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-40145225/original/18ccb220-4498-4067-bd9c-ce82e08cf874.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-40145225/original/9cb131dc-afe7-4121-a2db-e964119df7fb.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-40145225/original/6392410c-a66c-4153-bfd8-af8e3f68fec9.jpeg",
+        "https://a0.muscache.com/im/pictures/ddbdc94b-567f-450c-b975-22a835ec6f5b.jpg"
+      ],
+      "rating": 4.87,
+      "reviews": 55,
+      "badges": [
+        "Superhost"
+      ],
+      "price": {
+        "originalPrice": "$77",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $76.73",
+            "price": "$76.73"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1083014347072814261",
+      "url": "https://www.airbnb.com/rooms/1083014347072814261",
+      "title": "Room in Moira",
+      "latitude": 15.5988,
+      "longitude": 73.8544,
+      "description": "Anjuna Rhapsody | Chateau Madeira | Heritage Villa",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1083014347072814261/original/d764776c-6ca0-479c-a14f-e8e2ce55eb0c.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1083014347072814261/original/db3e5804-bcab-41a6-b1c9-a96bc34957b0.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1083014347072814261/original/0106d099-bd50-4361-944d-e2ef8b4240a2.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1083014347072814261/original/4eda677b-513e-4090-a3aa-00647fcc4fec.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1083014347072814261/original/8ff072aa-b0b9-4fcb-922b-98af5de116d4.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1083014347072814261/original/ed9ff391-c3a6-4d1c-8c96-f43e2cc830f5.png"
+      ],
+      "rating": 4.96,
+      "reviews": 23,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$64",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $63.58",
+            "price": "$63.58"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1660024104557229327",
+      "url": "https://www.airbnb.com/rooms/1660024104557229327",
+      "title": "Apartment in Arpora",
+      "latitude": 15.563773614991714,
+      "longitude": 73.76516664991642,
+      "description": "Sereno Amore - cosy studio apt near baga",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1660024104557229327/original/327b9f5c-75c0-4e33-b1b9-1d2fe80362e4.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1660024104557229327/original/de9a9705-4e4e-43c9-93e9-fd47f6efd551.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1660024104557229327/original/66290f73-b466-4356-aa6e-264685419a7a.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1660024104557229327/original/068b602d-1e96-4f15-908f-108db833eab7.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1660024104557229327/original/e7cf9413-a464-4711-a42e-4c37a18b6c5d.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1660024104557229327/original/772d2bbe-1ae3-4736-9eba-1b85058af3a8.jpeg"
+      ],
+      "rating": 4.96,
+      "reviews": 23,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$43",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $42.57",
+            "price": "$42.57"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1460676428536031132",
+      "url": "https://www.airbnb.com/rooms/1460676428536031132",
+      "title": "Apartment in Canacona",
+      "latitude": 15.007,
+      "longitude": 74.0307,
+      "description": "Glow By Palolem",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1460676428536031132/original/2227eea3-f6f8-4f36-b6a6-a3e165726ded.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1460676428536031132/original/aebeac42-7259-40a2-8974-180a0aab64d8.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1460676428536031132/original/4435b4df-fad7-4df0-8a8a-3c36f7246ccb.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1460676428536031132/original/a81d8a61-a315-4d1d-b883-b5d76f5b6b3a.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1460676428536031132/original/414ecac7-0fd4-42cf-a455-468d53703e43.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1460676428536031132/original/8566fdc0-c687-4640-855e-f36f4bc5d7cb.jpeg"
+      ],
+      "rating": 4.76,
+      "reviews": 37,
+      "price": {
+        "originalPrice": "$20",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $19.79",
+            "price": "$19.79"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1724053889351268332",
+      "url": "https://www.airbnb.com/rooms/1724053889351268332",
+      "title": "Apartment in Calangute",
+      "latitude": 15.5549,
+      "longitude": 73.7596,
+      "description": "Mediterranean Luxury Apt with resort amenities",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1724053889351268332/original/fa52688c-7313-4f96-b26e-44481e62432f.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1724053889351268332/original/43a88f7c-c74f-4fe1-998b-23dfa619e63c.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1724053889351268332/original/ae88a972-3354-4b5d-a4ed-8eed3f346b27.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1724053889351268332/original/52b90b47-ea5e-4f97-805e-80e43e6dfa64.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1724053889351268332/original/6954ceb2-0e47-4e37-aaa4-6f773d8cfabc.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1724053889351268332/original/c85a34fb-3a21-4b4e-b526-77e714a30595.jpeg"
+      ],
+      "rating": 5,
+      "reviews": 13,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$94",
+        "discountedPrice": "$79",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $78.30",
+            "price": "$78.30"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1794866649039854298",
+      "url": "https://www.airbnb.com/rooms/1794866649039854298",
+      "title": "Apartment in Ella",
+      "latitude": 15.4948,
+      "longitude": 73.9134,
+      "description": "1bhk in Old Goa/4 min to basilica/10 min to panjim",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1794866649039854298/original/c245233b-4039-4bf3-9053-8da5452936c8.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1794866649039854298/original/d6a2fa50-572c-4592-89aa-acacc99f3590.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1794866649039854298/original/a8c5fc7c-e85a-4b7d-b0e2-1aee976631de.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1794866649039854298/original/7a2e4550-83c0-47c5-b608-641b3b54f110.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1794866649039854298/original/33ace898-0a0f-40c1-95f7-5c8332a53e0f.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1794866649039854298/original/78b266d5-64b0-4656-bfcb-4337643a5fd6.jpeg"
+      ],
+      "rating": 5,
+      "reviews": 6,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$28",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $27.33",
+            "price": "$27.33"
+          }
+        ]
+      }
+    },
+    {
+      "id": "998507058263907007",
+      "url": "https://www.airbnb.com/rooms/998507058263907007",
+      "title": "Condo in Orlim",
+      "latitude": 15.222465455516511,
+      "longitude": 73.95178277425593,
+      "description": "Roseneath by Akaya Collective | 2BHK w Pool & View",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-998507058263907007/original/fdf44c68-46a2-48d2-b88d-c47dfcdcda7f.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-998507058263907007/original/5fa3d263-5950-4523-909e-78cc24c90cc6.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-998507058263907007/original/9c673f7f-6824-45a2-8e26-64d1d8ed1ca6.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-998507058263907007/original/cd73f7d7-6239-450d-a5b3-35c5e2c7ee59.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-998507058263907007/original/9687e35c-24fe-4bff-8acd-d3f3b47d8be6.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-998507058263907007/original/f12b7f8b-c4ef-4334-9c68-69be382b77df.jpeg"
+      ],
+      "rating": 4.96,
+      "reviews": 104,
+      "badges": [
+        "Guest favorite"
+      ],
+      "price": {
+        "originalPrice": "$51",
+        "qualifier": "for 1 night",
+        "breakdown": [
+          {
+            "description": "1 night x $50.89",
+            "price": "$50.89"
+          }
+        ]
+      }
+    }
+  ],
+  "pagination": {
+    "nextPageToken": "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0=",
+    "pageTokens": [
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjowLCJ2ZXJzaW9uIjoxfQ==",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0=",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjozNiwidmVyc2lvbiI6MX0=",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo1NCwidmVyc2lvbiI6MX0=",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo3MiwidmVyc2lvbiI6MX0=",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo5MCwidmVyc2lvbiI6MX0=",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMDgsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMjYsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNDQsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNjIsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxODAsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOTgsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyMTYsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyMzQsInZlcnNpb24iOjF9",
+      "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyNTIsInZlcnNpb24iOjF9"
+    ]
+  }
+}

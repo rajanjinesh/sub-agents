@@ -65,28 +65,35 @@ User → POST /api/search (streams progress)
 
 ### Booking subagent
 - Tool `search_booking` → `GET https://api.hasdata.com/scrape/booking/search`
-- Params: `keyword`, `checkInDate`, `checkOutDate`, `rooms=1`, `adults`, `children` (with ages),
-  currency INR.
+- Params: `keyword`, `checkInDate`, `checkOutDate`, `rooms=1`, `adults`, `children`,
+  `childrenAges` (comma-separated, e.g. `5,8`), currency INR.
+- Total price = `pricePerStayParsed` + `excludedChargesParsed` (taxes & fees).
+- Rating = `reviews.score` (/10). The top-level `rating` is the star class; don't use it.
 - Returns up to 3 `Stay` objects after product rules are applied.
 
 ### Airbnb subagent
 - Tool `search_airbnb` → `GET https://api.hasdata.com/scrape/airbnb/listing`
-- Params: `location`, `checkIn`, `checkOut`, `adults`, `children`, INR if supported.
+- Params: `location`, `checkIn`, `checkOut`, `adults`, `children` (count only; Airbnb
+  doesn't accept child ages).
+- Prices come back in **USD** with no currency parameter. Decision (simple route): convert
+  with one fixed constant `USD_TO_INR` in `src/lib/config.ts`. Airbnb prices are approximate.
+- Airbnb has no total field: total = nights × nightly price (from the "N nights x $X"
+  breakdown), then × `USD_TO_INR`. `feesMayBeExtra` is always `true` for Airbnb.
 - Returns up to 3 `Stay` objects after product rules are applied.
 
 ### HasData notes
 - Auth header: `x-api-key: HASDATA_API_KEY`.
 - Each call costs credits (Airbnb listing = 5 credits). Use saved fixture responses
   for UI work and tests. Only hit the live API when testing the data layer.
-- **Verify real response field names** from a logged raw response before mapping.
-  Confirm whether Airbnb supports an INR currency param; if not, flag it.
+- Field mapping for both sources is documented in `docs/hasdata-fields.md` (from real responses).
 
 ## 4. Product rules (enforced in code, per source, before top 3)
 1. Rating **7.0+ out of 10**. Unrated listings are excluded.
 2. Airbnb ratings are converted to /10 (rating × 2, e.g. 4.6 → 9.2).
 3. No hostels, dorms or shared rooms.
 4. Price = **total stay price incl. taxes and fees**, in **INR**.
-   - Airbnb: if the total may not include all fees, set `feesMayBeExtra: true`.
+   - Airbnb: converted from USD at a fixed rate and may exclude fees, so `feesMayBeExtra: true`
+     (the UI shows "Fees may be extra").
 5. 1 room only.
 6. Skip listings with no parseable price.
 7. Take the **3 cheapest** that pass all rules.
