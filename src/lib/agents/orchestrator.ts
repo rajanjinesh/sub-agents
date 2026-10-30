@@ -19,7 +19,10 @@ const SYSTEM =
   "You coordinate two subagents. Call both tools in the same turn. " +
   "Later, when you are given the ranked top two stays, reply with ONLY the Best pick reason: " +
   "one line, max 90 characters, comparing the price and rating of #1 with #2. " +
-  'Example: "Only ₹350 more than the cheapest, but rated 9.2 vs 7.4." No quotes, no extra text.';
+  "Be honest about the trade-off. If #1 is cheaper but rated lower, say so " +
+  '(e.g. "₹663 cheaper than the next option, rated 9.5 vs 10."). If #1 is pricier but rated higher, say that ' +
+  '(e.g. "Only ₹350 more than the cheapest, but rated 9.2 vs 7.4."). ' +
+  "Never present a lower rating as a plus. Use only the facts you are given. No quotes, no extra text.";
 
 const TOOL_FOR: Record<Source, string> = { booking: "call_booking_agent", airbnb: "call_airbnb_agent" };
 const SOURCE_FOR: Record<string, Source> = { call_booking_agent: "booking", call_airbnb_agent: "airbnb" };
@@ -52,13 +55,37 @@ function failedRun(source: Source, error: string, started = Date.now()): AgentRu
   };
 }
 
-/** Code-written reason, used when the model's line is empty or longer than 90 characters. */
-export function fallbackReason(best: Stay, runnerUp: Stay): string {
-  const diff = best.totalPrice - runnerUp.totalPrice;
-  const ratings = `rated ${best.rating.toFixed(1)} vs ${runnerUp.rating.toFixed(1)}`;
-  if (diff > 0) return `Only ${formatINR(diff)} more than the runner-up, but ${ratings}.`;
-  if (diff < 0) return `${formatINR(-diff)} cheaper than the runner-up, ${ratings}.`;
-  return `Same price as the runner-up, ${ratings}.`;
+const fmtRating = (r: number) => String(Number(r.toFixed(1))); // 10.0 → "10", 9.52 → "9.5"
+
+/** Code-computed price/rating relationship between #1 and #2, so the reason never misstates it. */
+export function tradeoffFacts(best: Stay, next: Stay): string {
+  const diff = best.totalPrice - next.totalPrice;
+  const price =
+    diff < 0 ? `#1 is ${formatINR(-diff)} cheaper than #2` : diff > 0 ? `#1 is ${formatINR(diff)} pricier than #2` : "#1 costs the same as #2";
+  const rating =
+    best.rating > next.rating
+      ? "rated higher"
+      : best.rating < next.rating
+        ? "rated LOWER (a downside, not a plus)"
+        : "rated the same";
+  return `${price}, and #1 is ${rating} (${fmtRating(best.rating)} vs ${fmtRating(next.rating)}).`;
+}
+
+/** Code-written reason, used when the model's line is empty or longer than 90 characters. Honest about the trade-off. */
+export function fallbackReason(best: Stay, next: Stay): string {
+  const diff = best.totalPrice - next.totalPrice;
+  const ratings = `${fmtRating(best.rating)} vs ${fmtRating(next.rating)}`;
+  const higher = best.rating > next.rating;
+  const lower = best.rating < next.rating;
+  if (diff < 0) {
+    const price = `${formatINR(-diff)} cheaper than the next option`;
+    return higher ? `${price} and rated ${ratings}.` : lower ? `${price}, rated ${ratings}.` : `${price}, same rating (${fmtRating(best.rating)}).`;
+  }
+  if (diff > 0) {
+    const price = `${formatINR(diff)} more than the next option`;
+    return higher ? `Only ${price}, but rated ${ratings}.` : `${price}, rated ${ratings}.`;
+  }
+  return `Same price as the next option, rated ${ratings}.`;
 }
 
 function cleanReason(text: string): string {
@@ -155,7 +182,7 @@ export async function runOrchestrator(
   let bestPickReason: string | null = null;
   if (ranked.length >= 2) {
     const [best, runnerUp] = ranked;
-    const text = `Code ranked the combined stays. #1: ${describe(best)}. #2: ${describe(runnerUp)}. Write the Best pick reason now.`;
+    const text = `Code ranked the combined stays. #1: ${describe(best)}. #2: ${describe(runnerUp)}. Facts: ${tradeoffFacts(best, runnerUp)} Write the Best pick reason now.`;
     const results: Anthropic.ToolResultBlockParam[] = toolUses.map((u) => {
       const { content, isError } = summary(runs[SOURCES.indexOf(SOURCE_FOR[u.name])]);
       return { type: "tool_result", tool_use_id: u.id, content, is_error: isError };

@@ -189,7 +189,7 @@ describe("runOrchestrator", () => {
       runBooking.mockResolvedValue(ok("booking", bookingStays));
       runAirbnb.mockResolvedValue(ok("airbnb", airbnbStays));
       const result = await runOrchestrator(input, collect().emit);
-      expect(result.bestPickReason).toBe("₹1,000 cheaper than the runner-up, rated 7.2 vs 8.5.");
+      expect(result.bestPickReason).toBe("₹1,000 cheaper than the next option, rated 7.2 vs 8.5.");
       expect(result.trace.some((e) => e.type === "warning" && e.message.includes("code-written"))).toBe(true);
     }
   });
@@ -225,13 +225,71 @@ describe("runOrchestrator", () => {
   });
 });
 
+/** What the orchestrator model is told on the reason call (system prompt + the last user text). */
+async function reasonCallText(booking: Stay[], airbnb: Stay[]) {
+  create.mockReset();
+  create.mockResolvedValueOnce(bothTools).mockResolvedValueOnce(reply("ok"));
+  runBooking.mockResolvedValue(ok("booking", booking));
+  runAirbnb.mockResolvedValue(ok("airbnb", airbnb));
+  await runOrchestrator(input, collect().emit);
+  const call = create.mock.calls[1][0];
+  const text = call.messages.at(-1).content.find((b: { type: string }) => b.type === "text").text as string;
+  return { system: call.system as string, text };
+}
+
+describe("Best pick reason is honest about the trade-off", () => {
+  it("system prompt requires honesty and forbids calling a lower rating a plus", async () => {
+    const { system } = await reasonCallText(bookingStays, airbnbStays);
+    expect(system).toContain("Be honest about the trade-off");
+    expect(system).toContain("cheaper but rated lower");
+    expect(system).toContain("pricier but rated higher");
+    expect(system).toContain("Never present a lower rating as a plus");
+  });
+
+  it("#1 cheaper but rated lower → the model is told it is a downside", async () => {
+    // ranked: A1 (₹3,000, 7.2) then B1 (₹4,000, 8.5)
+    const { text } = await reasonCallText(bookingStays, airbnbStays);
+    expect(text).toContain("#1 is ₹1,000 cheaper than #2, and #1 is rated LOWER (a downside, not a plus) (7.2 vs 8.5).");
+  });
+
+  it("#1 pricier but rated higher → the model is told it costs more but is rated higher", async () => {
+    // ranked: the ₹1,050 / 8.5 stay jumps ahead of the ₹1,000 / 7.0 stay
+    const { text } = await reasonCallText([stay("booking", "Cheap", 1000, 7)], [stay("airbnb", "Better", 1050, 8.5)]);
+    expect(text).toContain("#1 is ₹50 pricier than #2, and #1 is rated higher (8.5 vs 7).");
+  });
+
+  it("#1 cheaper and rated higher → says so", async () => {
+    const { text } = await reasonCallText([stay("booking", "Best", 1000, 9)], [stay("airbnb", "Other", 2000, 8)]);
+    expect(text).toContain("#1 is ₹1,000 cheaper than #2, and #1 is rated higher (9 vs 8).");
+  });
+});
+
 describe("fallbackReason", () => {
-  it("pricier best pick", () => {
+  it("cheaper but rated lower: says so, never as a plus", () => {
+    expect(fallbackReason(stay("airbnb", "a", 4337, 9.52), stay("airbnb", "b", 5000, 10))).toBe(
+      "₹663 cheaper than the next option, rated 9.5 vs 10.",
+    );
+  });
+  it("pricier but rated higher", () => {
     expect(fallbackReason(stay("booking", "a", 5350, 9.2), stay("airbnb", "b", 5000, 7.4))).toBe(
-      "Only ₹350 more than the runner-up, but rated 9.2 vs 7.4.",
+      "Only ₹350 more than the next option, but rated 9.2 vs 7.4.",
+    );
+  });
+  it("cheaper and rated higher", () => {
+    expect(fallbackReason(stay("booking", "a", 4852, 9.1), stay("airbnb", "b", 5000, 8.9))).toBe(
+      "₹148 cheaper than the next option and rated 9.1 vs 8.9.",
+    );
+  });
+  it("cheaper, same rating", () => {
+    expect(fallbackReason(stay("booking", "a", 4000, 8), stay("airbnb", "b", 5000, 8))).toBe(
+      "₹1,000 cheaper than the next option, same rating (8).",
     );
   });
   it("same price", () => {
-    expect(fallbackReason(stay("booking", "a", 5000, 9), stay("airbnb", "b", 5000, 8))).toBe("Same price as the runner-up, rated 9.0 vs 8.0.");
+    expect(fallbackReason(stay("booking", "a", 5000, 9), stay("airbnb", "b", 5000, 8))).toBe("Same price as the next option, rated 9 vs 8.");
+  });
+  it("never longer than 90 characters for large amounts", () => {
+    const line = fallbackReason(stay("booking", "a", 1250000, 10), stay("airbnb", "b", 100000, 7));
+    expect(line.length).toBeLessThanOrEqual(90);
   });
 });
