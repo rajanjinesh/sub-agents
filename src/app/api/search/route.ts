@@ -39,9 +39,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Server is not configured" }, { status: 500 });
   }
 
-  // Non-production test hook: DEBUG_FAIL_SOURCE=booking|airbnb forces that subagent to fail.
-  const forced = process.env.NODE_ENV !== "production" ? process.env.DEBUG_FAIL_SOURCE : undefined;
-  const failSource = forced === "booking" || forced === "airbnb" ? forced : undefined;
+  // Non-production test hooks (to see every UI state in fixture mode):
+  // DEBUG_FAIL_SOURCE / DEBUG_EMPTY_SOURCE = booking | airbnb | both.
+  const hook = (value: string | undefined) =>
+    process.env.NODE_ENV !== "production" && (value === "booking" || value === "airbnb" || value === "both") ? value : undefined;
+  const failSource = hook(process.env.DEBUG_FAIL_SOURCE);
+  const emptySource = hook(process.env.DEBUG_EMPTY_SOURCE);
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
@@ -54,7 +57,7 @@ export async function POST(req: NextRequest) {
         }
       };
       try {
-        await runOrchestrator(input, emit, { failSource });
+        await runOrchestrator(input, emit, { failSource, emptySource });
       } catch (err) {
         // Should not happen (the orchestrator turns failures into results), but never leave the stream hanging.
         const error = err instanceof Error ? err.message : String(err);

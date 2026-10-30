@@ -1,37 +1,56 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, useSyncExternalStore } from "react";
-import { addDays, formatDate, nights, todayISO } from "@/lib/format";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { addDays, formatDate, formatNights, nights, todayISO } from "@/lib/format";
+import { parseSearchParams, toSearchParams } from "@/lib/searchParams";
 import type { SearchInput } from "@/lib/types";
 import { validateSearchInput, type SearchErrors } from "@/lib/validate";
 import { Field, inputClass } from "./Field";
 import { NumberField } from "./NumberField";
 
 const subscribeNoop = () => () => {};
+const readSearch = () => window.location.search;
+
+type Picked = Partial<{
+  destination: string;
+  checkIn: string;
+  checkOut: string;
+  adults: number;
+  children: number;
+  ages: string[];
+}>;
 
 export function SearchForm() {
   const router = useRouter();
-  // "" on the server/prerender, the visitor's local date on the client.
+  // "" on the server/prerender, the visitor's local date / URL query on the client.
   const today = useSyncExternalStore(subscribeNoop, todayISO, () => "");
-  const [destination, setDestination] = useState("");
-  const [pickedCheckIn, setCheckIn] = useState<string | null>(null);
-  const [pickedCheckOut, setCheckOut] = useState<string | null>(null);
-  const checkIn = pickedCheckIn ?? today;
-  const checkOut = pickedCheckOut ?? (today ? addDays(today, 1) : "");
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [ages, setAges] = useState<string[]>([]);
+  const search = useSyncExternalStore(subscribeNoop, readSearch, () => "");
+
+  // "← New search" lands here with the previous inputs in the URL: use them as the starting values.
+  const params = new URLSearchParams(search);
+  const prefill = params.get("destination") !== null ? parseSearchParams((k) => params.get(k)) : null;
+  const finite = (n: number | undefined, fallback: number) => (n !== undefined && Number.isFinite(n) ? n : fallback);
+
+  const [picked, setPicked] = useState<Picked>({});
+  const set = (patch: Picked) => setPicked((p) => ({ ...p, ...patch }));
+
+  const destination = picked.destination ?? prefill?.destination ?? "";
+  const checkIn = picked.checkIn ?? (prefill?.checkIn || today);
+  const checkOut = picked.checkOut ?? (prefill?.checkOut || (today ? addDays(today, 1) : ""));
+  const adults = picked.adults ?? finite(prefill?.adults, 1);
+  const children = picked.children ?? finite(prefill?.children, 0);
+  const prefillAges = (prefill?.childAges ?? []).map((a) => (Number.isFinite(a) ? String(a) : ""));
+  const count = Number.isInteger(children) && children > 0 ? Math.min(children, 10) : 0;
+  const ages = Array.from({ length: count }, (_, i) => (picked.ages ?? prefillAges)[i] ?? "");
+
   const [errors, setErrors] = useState<SearchErrors>({});
   const [searching, setSearching] = useState(false);
+  // Next keeps this page alive behind /results, so clear "Searching…" when we navigate away
+  // (otherwise "← New search" would come back to a disabled button).
+  useEffect(() => () => setSearching(false), []);
 
   const n = nights(checkIn, checkOut);
-
-  function changeChildren(value: number) {
-    setChildren(value);
-    const count = Number.isInteger(value) && value > 0 ? Math.min(value, 10) : 0;
-    setAges((prev) => Array.from({ length: count }, (_, i) => prev[i] ?? ""));
-  }
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -49,15 +68,7 @@ export function SearchForm() {
     if (Object.keys(found).length > 0) return;
 
     setSearching(true);
-    const params = new URLSearchParams({
-      destination: input.destination,
-      checkIn,
-      checkOut,
-      adults: String(adults),
-      children: String(children),
-      childAges: input.childAges.join(","),
-    });
-    router.push(`/results?${params.toString()}`);
+    router.push(`/results?${toSearchParams(input).toString()}`);
   }
 
   return (
@@ -68,7 +79,7 @@ export function SearchForm() {
           type="text"
           placeholder="e.g. Goa"
           value={destination}
-          onChange={(e) => setDestination(e.target.value)}
+          onChange={(e) => set({ destination: e.target.value })}
           className={inputClass}
         />
       </Field>
@@ -80,7 +91,7 @@ export function SearchForm() {
             type="date"
             min={today || undefined}
             value={checkIn}
-            onChange={(e) => setCheckIn(e.target.value)}
+            onChange={(e) => set({ checkIn: e.target.value })}
             className={inputClass}
           />
           <span className="text-xs leading-4 text-muted">
@@ -93,23 +104,23 @@ export function SearchForm() {
             type="date"
             min={checkIn || today || undefined}
             value={checkOut}
-            onChange={(e) => setCheckOut(e.target.value)}
+            onChange={(e) => set({ checkOut: e.target.value })}
             className={inputClass}
           />
           <span className="text-xs leading-4 text-muted">{checkOut ? formatDate(checkOut) : ""}</span>
         </Field>
       </div>
 
-      <p className="text-sm leading-5 text-muted">{n === 1 ? "1 night" : `${n} nights`}</p>
+      <p className="text-sm leading-5 text-muted">{formatNights(n)}</p>
 
       <div className="grid grid-cols-2 gap-3">
-        <NumberField id="adults" label="Adults" min={1} value={adults} onChange={setAdults} error={errors.adults} />
+        <NumberField id="adults" label="Adults" min={1} value={adults} onChange={(v) => set({ adults: v })} error={errors.adults} />
         <NumberField
           id="children"
           label="Children"
           min={0}
           value={children}
-          onChange={changeChildren}
+          onChange={(v) => set({ children: v, ages })}
           error={errors.children}
         />
       </div>
@@ -122,7 +133,7 @@ export function SearchForm() {
                 <select
                   id={`age-${i}`}
                   value={age}
-                  onChange={(e) => setAges((prev) => prev.map((a, j) => (j === i ? e.target.value : a)))}
+                  onChange={(e) => set({ ages: ages.map((a, j) => (j === i ? e.target.value : a)) })}
                   className={`${inputClass} ${age === "" ? "text-placeholder" : ""}`}
                 >
                   <option value="">Select age</option>

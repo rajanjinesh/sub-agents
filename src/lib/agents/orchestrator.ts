@@ -1,6 +1,6 @@
 import type Anthropic from "@anthropic-ai/sdk";
 import { getAnthropic, getModel } from "../anthropic";
-import { formatINR } from "../format";
+import { formatINR, formatRating } from "../format";
 import { rank } from "../rank";
 import type { SearchInput, SearchResult, SourceResult, SseEvent, Stay, TraceEvent } from "../types";
 import { runAirbnbAgent } from "./airbnbAgent";
@@ -9,7 +9,8 @@ import { compareParams, plural, searchSchema, type AgentRun } from "./subagent";
 
 type Source = "booking" | "airbnb";
 export type Emit = (event: SseEvent) => void;
-export type OrchestratorOptions = { failSource?: Source };
+/** Test hooks: force a source to fail, or to return no stays ("both" = every source). */
+export type OrchestratorOptions = { failSource?: Source | "both"; emptySource?: Source | "both" };
 
 const SOURCES: Source[] = ["booking", "airbnb"];
 const MAX_STAYS = 6;
@@ -55,7 +56,6 @@ function failedRun(source: Source, error: string, started = Date.now()): AgentRu
   };
 }
 
-const fmtRating = (r: number) => String(Number(r.toFixed(1))); // 10.0 → "10", 9.52 → "9.5"
 
 /** Code-computed price/rating relationship between #1 and #2, so the reason never misstates it. */
 export function tradeoffFacts(best: Stay, next: Stay): string {
@@ -68,18 +68,18 @@ export function tradeoffFacts(best: Stay, next: Stay): string {
       : best.rating < next.rating
         ? "rated LOWER (a downside, not a plus)"
         : "rated the same";
-  return `${price}, and #1 is ${rating} (${fmtRating(best.rating)} vs ${fmtRating(next.rating)}).`;
+  return `${price}, and #1 is ${rating} (${formatRating(best.rating)} vs ${formatRating(next.rating)}).`;
 }
 
 /** Code-written reason, used when the model's line is empty or longer than 90 characters. Honest about the trade-off. */
 export function fallbackReason(best: Stay, next: Stay): string {
   const diff = best.totalPrice - next.totalPrice;
-  const ratings = `${fmtRating(best.rating)} vs ${fmtRating(next.rating)}`;
+  const ratings = `${formatRating(best.rating)} vs ${formatRating(next.rating)}`;
   const higher = best.rating > next.rating;
   const lower = best.rating < next.rating;
   if (diff < 0) {
     const price = `${formatINR(-diff)} cheaper than the next option`;
-    return higher ? `${price} and rated ${ratings}.` : lower ? `${price}, rated ${ratings}.` : `${price}, same rating (${fmtRating(best.rating)}).`;
+    return higher ? `${price} and rated ${ratings}.` : lower ? `${price}, rated ${ratings}.` : `${price}, same rating (${formatRating(best.rating)}).`;
   }
   if (diff > 0) {
     const price = `${formatINR(diff)} more than the next option`;
@@ -157,10 +157,11 @@ export async function runOrchestrator(
   const runSource = async (source: Source): Promise<AgentRun> => {
     emit({ type: "source_started", source });
     const t0 = Date.now();
-    const run =
-      options.failSource === source
-        ? failedRun(source, "forced failure (test)", t0)
-        : await RUNNERS[source](input).catch((err) => failedRun(source, err instanceof Error ? err.message : String(err), t0));
+    const forced = (hook?: Source | "both") => hook === source || hook === "both";
+    let run = forced(options.failSource)
+      ? failedRun(source, "forced failure (test)", t0)
+      : await RUNNERS[source](input).catch((err) => failedRun(source, err instanceof Error ? err.message : String(err), t0));
+    if (run.status === "ok" && forced(options.emptySource)) run = { ...run, stays: [] };
     emit(
       run.status === "ok"
         ? { type: "source_done", source, count: run.stays.length }
