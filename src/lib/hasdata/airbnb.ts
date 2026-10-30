@@ -1,4 +1,5 @@
 import { USD_TO_INR } from "../config";
+import { nights } from "../format";
 import { isSharedOrHostel } from "../rules";
 import type { SearchInput, Stay } from "../types";
 import { hasdataGet } from "./http";
@@ -47,6 +48,45 @@ function parseNightly(description: string | undefined): { nights: number; usd: n
   return n > 0 && usd > 0 ? { nights: n, usd } : null;
 }
 
+type Breakdown = { description?: string; price?: string }[];
+
+/** Airbnb's "monthly" price is for a 30-night month. */
+const DAYS_PER_MONTH = 30;
+
+/** "$1,864.30" → 1864.3 (ignores a leading "-" discount sign by design: callers only pass base prices). */
+function parseUsd(text: string | undefined): number | null {
+  const n = Number((text ?? "").replace(/[^0-9.]/g, ""));
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
+/** Nights of the search itself, from the search URL HasData echoes back (checkin / checkout). */
+function searchNights(searchUrl: string | undefined): number {
+  try {
+    const q = new URL(searchUrl ?? "").searchParams;
+    return nights(q.get("checkin") ?? "", q.get("checkout") ?? "");
+  } catch {
+    return 0;
+  }
+}
+
+/**
+ * Total stay in USD plus its nights, from the first price lines of a listing:
+ * - short stays: "N nights x $X" → N × X
+ * - long stays (about 28+ nights) are priced monthly: "Average monthly price" $M → M ÷ 30 × the search's nights
+ * Discount lines (special offer, monthly/weekly discount) are ignored in both cases.
+ */
+function stayUsd(breakdown: Breakdown | undefined, nightsInSearch: number): { nights: number; usd: number } | null {
+  const nightly = parseNightly(breakdown?.[0]?.description);
+  if (nightly) return { nights: nightly.nights, usd: nightly.nights * nightly.usd };
+
+  const monthly = breakdown?.find((b) => /average monthly price/i.test(b.description ?? ""));
+  const perMonth = parseUsd(monthly?.price);
+  if (perMonth && nightsInSearch > 0) {
+    return { nights: nightsInSearch, usd: (perMonth / DAYS_PER_MONTH) * nightsInSearch };
+  }
+  return null;
+}
+
 /** Carry the search dates/guests onto the listing link, taken from HasData's own search URL. */
 function listingUrl(rawUrl: string, searchUrl: string | undefined): string {
   try {
@@ -64,8 +104,8 @@ function listingUrl(rawUrl: string, searchUrl: string | undefined): string {
 }
 
 /**
- * Raw Airbnb response → Stay[]. Total = nights × nightly USD (from the price breakdown) × USD_TO_INR.
- * Special-offer discounts are ignored. Rating × 2 → /10. Airbnb totals may exclude fees and are
+ * Raw Airbnb response → Stay[]. Total = USD stay price (see stayUsd: nights × nightly, or the monthly
+ * price pro-rated for long stays) × USD_TO_INR. Discounts are ignored. Rating × 2 → /10. Airbnb totals may exclude fees and are
  * converted at a fixed rate, so feesMayBeExtra is always true.
  * Drops listings with no parseable price, no rating, or a hostel/dorm/shared room.
  */
@@ -73,19 +113,20 @@ export function normalizeAirbnb(raw: unknown): Stay[] {
   const root = raw as { requestMetadata?: { url?: string }; properties?: AirbnbProperty[] };
   const props = Array.isArray(root?.properties) ? root.properties : [];
 
+  const nightsInSearch = searchNights(root.requestMetadata?.url);
   const stays: Stay[] = [];
   for (const p of props) {
-    const nightly = parseNightly(p.price?.breakdown?.[0]?.description);
-    if (!nightly || !p.url || !p.title) continue;
+    const stay = stayUsd(p.price?.breakdown, nightsInSearch);
+    if (!stay || !p.url || !p.title) continue;
     if (!isNum(p.rating) || p.rating <= 0) continue;
     if (isSharedOrHostel(`${p.title} ${p.description ?? ""}`)) continue;
 
-    const totalPrice = Math.round(nightly.nights * nightly.usd * USD_TO_INR);
+    const totalPrice = Math.round(stay.usd * USD_TO_INR);
     stays.push({
       source: "airbnb",
       name: p.description?.trim() ? `${p.title}: ${p.description.trim()}` : p.title,
       totalPrice,
-      pricePerNight: Math.round(totalPrice / nightly.nights),
+      pricePerNight: Math.round(totalPrice / stay.nights),
       currency: "INR",
       rating: Math.round(p.rating * 2 * 100) / 100,
       reviewCount: isNum(p.reviews) ? p.reviews : null,

@@ -48,6 +48,14 @@ Response: `{ requestMetadata, properties[], pagination }` (18 properties per pag
 
 `USD_TO_INR` lives in `src/lib/config.ts` (currently **88**). Airbnb INR prices are approximate.
 
+**Long stays (about 28+ nights) are priced monthly.** The breakdown then reads "Average monthly price $M"
+(qualifier `monthly`), plus "Monthly stay discount" lines. The total is `M ÷ 30 × nights of the search`
+(the search's nights come from the `checkin`/`checkout` in `requestMetadata.url`). Discounts are ignored,
+as with special offers, so long-stay totals can be somewhat high. Found with a 38-night Chennai search.
+
+**`children=0` is rejected** by this endpoint (HTTP 422, "children must be at least 1"), so the param is
+only sent when there are children.
+
 Dropped by the normalizer: no parseable breakdown, no rating, or a hostel/dorm/shared-room match
 on `title` + `description`.
 

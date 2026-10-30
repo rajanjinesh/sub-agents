@@ -129,3 +129,47 @@ describe("airbnbParams", () => {
     expect(airbnbParams({ ...base, adults: 2, children: 2, childAges: [1, 5] }).children).toBe("2");
   });
 });
+
+describe("normalizeAirbnb: long (monthly-priced) stays", () => {
+  const monthly = (id: number, perMonth: string, rating: number | null = 4.9) => ({
+    url: `https://www.airbnb.com/rooms/${id}`,
+    title: `Apartment in Chennai ${id}`,
+    rating,
+    reviews: 10,
+    price: {
+      qualifier: "monthly",
+      breakdown: [
+        { description: "Average monthly price", price: perMonth },
+        { description: "Monthly stay discount", price: "-$335.56" },
+        { description: "Airbnb monthly stay savings", price: "-$47.39" },
+      ],
+    },
+  });
+  const raw = (properties: unknown[], search = "checkin=2026-11-02&checkout=2026-12-10&adults=2&children=1") => ({
+    requestMetadata: { url: `https://www.airbnb.com/s/Chennai/homes?${search}` },
+    properties,
+  });
+
+  it("prices a 38-night search from the average monthly price (÷ 30 × nights), ignoring discounts", () => {
+    const [s] = normalizeAirbnb(raw([monthly(1, "$1,864.30")]));
+    expect(s.totalPrice).toBe(Math.round((1864.3 / 30) * 38 * USD_TO_INR));
+    expect(s.pricePerNight).toBe(Math.round(s.totalPrice / 38));
+    expect(s.feesMayBeExtra).toBe(true);
+    expect(s.rating).toBe(9.8);
+  });
+
+  it("returns stays instead of dropping every monthly-priced listing", () => {
+    const stays = normalizeAirbnb(raw([monthly(1, "$1,864.30"), monthly(2, "$975.08"), monthly(3, "$926.84")]));
+    expect(stays).toHaveLength(3);
+  });
+
+  it("skips a monthly listing when the search nights are unknown", () => {
+    expect(normalizeAirbnb(raw([monthly(1, "$1,864.30")], ""))).toEqual([]);
+  });
+
+  it("still handles short stays in the same response shape", () => {
+    const short = { url: "https://www.airbnb.com/rooms/9", title: "Flat", rating: 4.5, price: { breakdown: [{ description: "2 nights x $50.00", price: "$100.00" }] } };
+    const [s] = normalizeAirbnb(raw([short], "checkin=2026-11-02&checkout=2026-11-04"));
+    expect(s.totalPrice).toBe(Math.round(100 * USD_TO_INR));
+  });
+});
