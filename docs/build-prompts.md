@@ -326,7 +326,8 @@ calls **both subagents at the same time**, waits for both, copes if one fails, r
 live, which is what will power the loading screen in Step 5. This is the core lesson of the project.
 
 **What you'll see when it's done:**
-- No new screen yet. Code mode will show you a test run in the terminal, events arriving in order:
+- No new screen yet. Open `http://localhost:3000/api/dev/search` (tick Pretty-print) to watch
+  one full orchestrator run, with events arriving in order:
   ```
   source_started  booking
   source_started  airbnb          ← both start together (parallel)
@@ -336,7 +337,7 @@ live, which is what will power the loading screen in Step 5. This is the core le
   result  6 stays ranked, Best pick: "Sea Breeze Resort"
           reason: "Only ₹350 more than the cheapest, but rated 9.2 vs 7.4."
   ```
-- A failure test: with Airbnb switched off, you still get Booking's 3 stays and "airbnb failed".
+- A failure test: open `/api/dev/search?fail=airbnb` and you still get Booking's 3 stays and "airbnb failed".
 - Passing tests that prove `rank()` orders stays exactly per your rule.
 
 ```
@@ -358,9 +359,14 @@ No UI changes yet. Re-read CLAUDE.md sections 3, 5, 6 and 7 first.
 - src/lib/agents/orchestrator.ts, runOrchestrator(input, emit).
 - Its own Claude call with a system prompt ("You coordinate two subagents. Call both tools in
   the same turn.") and exactly 2 tools: call_booking_agent, call_airbnb_agent.
+- The tool handlers call the existing runBookingAgent / runAirbnbAgent (Step 3). Each already
+  returns a SourceResult plus its own trace; merge those traces into the orchestrator trace
+  in time order, tagged by agent.
 - When the model returns the tool_use blocks, run both subagents IN PARALLEL with
   Promise.allSettled. If the model only calls one, call the other in code and log a warning
   in the trace.
+- The subagents' input always comes from the user's SearchInput (same rule as Step 3), not
+  from what the orchestrator model writes in its tool calls.
 - Return both results to the model as tool_results.
 - Code combines the stays → rank() → max 6.
 - Then the model writes the Best pick reason only: give it the #1 and #2 stays, ask for one line,
@@ -377,12 +383,20 @@ No UI changes yet. Re-read CLAUDE.md sections 3, 5, 6 and 7 first.
 - Node runtime, export maxDuration = 60.
 - One subagent failing → partial result. Both failing → result with empty stays and both failed.
 
+### 4. Browser view for learning
+- GET /api/dev/search?fail=booking|airbnb (fail is optional) runs the orchestrator on a sample
+  input (Goa, 14 days from today, 1 night, 2 adults, 1 child age 5) and returns JSON:
+  { events: [every SSE event in order, with time], result: SearchResult, lines: [readable trace] }.
+  The optional fail param forces that subagent to fail, to show the partial state.
+  404 in production.
+
 ## Done when
 - rank() tests pass.
 - A curl POST to /api/search in fixture mode streams all events in order and ends with a valid
   result (show me the output).
 - Forcing one source to fail (e.g. a temporary env flag) still returns the other's stays.
-- Commit and push to GitHub (Vercel redeploys automatically). Summarize, with the full trace of one run. Stop; don't start Step 5.
+- Commit and push to GitHub (Vercel redeploys automatically). Summarize, with the full trace of one run.
+- Leave the dev server running so I can open /api/dev/search in my browser. Stop; don't start Step 5.
 ```
 
 ---

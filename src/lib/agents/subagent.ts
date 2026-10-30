@@ -16,7 +16,7 @@ export type SubagentConfig = {
 
 export type AgentRun = SourceResult & { trace: TraceEvent[] };
 
-const searchSchema: Anthropic.Tool["input_schema"] = {
+export const searchSchema: Anthropic.Tool["input_schema"] = {
   type: "object",
   properties: {
     destination: { type: "string", description: "City or region, e.g. Goa" },
@@ -29,14 +29,31 @@ const searchSchema: Anthropic.Tool["input_schema"] = {
   required: ["destination", "checkIn", "checkOut", "adults", "children", "childAges"],
 };
 
-const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+/** Compare the params a model wrote in a tool call with the user's SearchInput. */
+export function compareParams(input: SearchInput, raw: unknown) {
+  const p = (raw ?? {}) as Partial<SearchInput>;
+  const asked: SearchInput = {
+    destination: String(p.destination ?? ""),
+    checkIn: String(p.checkIn ?? ""),
+    checkOut: String(p.checkOut ?? ""),
+    adults: Number(p.adults),
+    children: Number(p.children),
+    childAges: Array.isArray(p.childAges) ? p.childAges.map(Number) : [],
+  };
+  const differs = (Object.keys(input) as (keyof SearchInput)[]).filter(
+    (k) => JSON.stringify(asked[k]) !== JSON.stringify(input[k]),
+  );
+  return { asked, differs };
+}
 
 /** One subagent = one Claude Messages API conversation with its own system prompt and exactly one tool. */
 export async function runSubagent(cfg: SubagentConfig, input: SearchInput): Promise<AgentRun> {
   const started = Date.now();
   const trace: TraceEvent[] = [];
   const log = (type: TraceEvent["type"], message: string) =>
-    trace.push({ t: Date.now() - started, agent: cfg.source, type, message });
+    trace.push({ t: Date.now() - started, at: Date.now(), agent: cfg.source, type, message });
   const finish = () => {
     const ms = Date.now() - started;
     log("agent_finished", `${cfg.source} agent finished in ${(ms / 1000).toFixed(1)}s`);
@@ -73,19 +90,8 @@ export async function runSubagent(cfg: SubagentConfig, input: SearchInput): Prom
           results.push({ type: "tool_result", tool_use_id: use.id, is_error: true, content: "Already searched. Just report the result." });
           continue;
         }
-        const p = use.input as Partial<SearchInput>;
-        const asked: SearchInput = {
-          destination: String(p.destination ?? ""),
-          checkIn: String(p.checkIn ?? ""),
-          checkOut: String(p.checkOut ?? ""),
-          adults: Number(p.adults),
-          children: Number(p.children),
-          childAges: Array.isArray(p.childAges) ? p.childAges.map(Number) : [],
-        };
         // The user's SearchInput is the source of truth: the model's params are only checked against it.
-        const differs = (Object.keys(input) as (keyof SearchInput)[]).filter(
-          (k) => JSON.stringify(asked[k]) !== JSON.stringify(input[k]),
-        );
+        const { asked, differs } = compareParams(input, use.input);
         const params: SearchInput = { ...input, childAges: [...input.childAges] };
         log(
           "tool_called",
