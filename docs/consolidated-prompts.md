@@ -7,13 +7,13 @@ Everything below was taken from the full chat. Step prompts are copied **verbati
 `docs/build-prompts.md`; the messages you typed in chat are included in the order you sent them
 (typos tidied, meaning unchanged). Nothing is paraphrased inside a code block.
 
-> **About Figma:** the design originally lives in Figma (`docs/design-spec-v3.md`, line 3: "Based on
-> prototype-2 design spec (Figma 'SearchHotel')"). But no prompt asks to read Figma: `CLAUDE.md`,
-> `docs/build-prompts.md` and the `step-check` skill never mention it. Every UI step points at the **written
-> spec** `docs/design-spec-v3.md` (colours, sizes, copy, states), which is the Figma design put into text.
-> So the app was built from that file, and no Figma tool or link was used. The stays data (top 3 per source)
-> comes from the **HasData** REST API. To build straight from Figma instead, you would add a Figma link to
-> the UI prompts and use the Figma connector.
+> **About Figma:** the UI is based on the Figma design. The lineage is
+> **Figma design ("SearchHotel", prototype-2) → written spec `docs/design-spec-v3.md` → the UI built in this
+> project** (`docs/design-spec-v3.md`, line 3: "Based on prototype-2 design spec (Figma 'SearchHotel')").
+> The step prompts in this chat never open Figma themselves: they say "re-read docs/design-spec-v3.md and
+> match copy, sizes and colors exactly", so the Figma design reached the code through that spec file. The
+> prompt or process that turned the Figma design into the spec happened **before** this project and is not in
+> this chat, so it is not listed here. The stays data (top 3 per source) comes from the **HasData** REST API.
 
 ## How the pieces fit
 
